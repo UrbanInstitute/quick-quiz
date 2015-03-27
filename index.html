@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="col-md-12">
+        <div id="quiz"></div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="quiz.js"></script>
+  <script>
+    $(function() {
+      $('#quiz').quiz("unicorns.json");
+    });
+  </script>
+</body>
+</html>
