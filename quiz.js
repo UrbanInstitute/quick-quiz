@@ -3,96 +3,127 @@
 */
 
 
-(function($) {
+;(function($) {
 
-
-$.fn.quiz = function(question_filename) {
-  $.getJSON(question_filename, render.bind(this));
-}
-
-
+// keep track of number of quizes added to page
 var quiz_count = 0;
 
+// add jQuery selection method to create
+// quiz structure from question json file
+// "filename" can be path to question json
+// or javascript object
+$.fn.quiz = function(filename) {
+  if (typeof filename === "string") {
+    $.getJSON(filename, render.bind(this));
+  } else {
+    render.call(this, filename);
+  }
+};
+
+// create html structure for quiz
+// using loaded questions json
 function render(opts) {
 
   // list of questions to insert into quiz
   var questions = opts.questions;
 
-  var quiz = $(this)
+  var $quiz = $(this)
     .attr("class", "carousel slide")
     .attr("data-ride", "carousel");
 
-  var indicators = $("<ol>")
+  var height = $quiz.height();
+
+  var $indicators = $("<ol>")
     .attr("class", "carousel-indicators")
-    .appendTo(quiz);
+    .appendTo($quiz);
 
-  var slides = $("<div>")
+  var $slides = $("<div>")
     .attr("class", "carousel-inner")
-    .attr("role", "list-box")
-    .appendTo(quiz);
+    .attr("role", "listbox")
+    .appendTo($quiz);
 
-  quiz.append(control("left", "prev", "Previous"))
-      .append(control("right", "next", "Next"));
+  // unique ID for container to refer to in carousel
+  var name = $quiz.attr("id") || "urban_quiz_" + (++quiz_count);
 
-  var name = quiz.attr("id");
+  $quiz.attr('id', name);
 
   // add question number indicators
-  $.each(questions, function(i, q) {
-    indicators.append(
-      $("<li>")
-        .attr("data-target", "#" + name)
-        .attr("data-slide-to", i)
-        .attr("class", i ? "" : "active")
-    );
+  $.each(questions, function(i, question) {
+    $("<li>")
+      .attr("data-target", "#" + name)
+      .attr("data-slide-to", i)
+      .attr("class", i ? "" : "active")
+      .appendTo($indicators);
   });
 
-  $.each(questions, function(i, q) {
+  $.each(questions, function(i, question) {
 
-    var item = $("<div>").attr("class", "item" + (i ? "" : " active"));
+    var $item = $("<div>")
+      .attr("class", "item" + (i ? "" : " active"))
+      .attr("height", height + "px");
 
-    if (q.image) {
-      item.append($("<img>").attr("src", q.image));
+    if (question.image) {
+      $item.attr("background-image", "url(\"" + question.image + "\")");
     }
 
-    item.append(
-      $("<div>").attr("class", "carousel-caption")
-        .text(q.prompt)
-    );
+    $("<div>")
+      .attr("class", "quiz-question")
+      .text(question.prompt)
+      .appendTo($item);
 
-    slides.append(item);
-  })
+    var $answers = $("<div>")
+      .attr("class", "quiz-answers")
+      .appendTo($item);
 
-  quiz.carousel({
+    $.each(question.answers, function(j, answer) {
+      $("<button>")
+        .attr('class', 'btn')
+        .text(answer)
+        .appendTo($answers);
+    });
+
+    $slides.append($item);
+  });
+
+  $quiz.carousel({
     "interval" : false
   });
 
+  $(window).on('resize', function() {
+    $quiz.find(".item")
+      .attr('height', $quiz.height() + "px");
+  });
+
 }
 
 
-function control(side, slide, text) {
-
-  var cntrl = $("<a>")
-    .attr("class", side + " carousel-control")
-    .attr("href", name)
-    .attr("role", "button")
-    .attr("data-slide", slide);
-
-  cntrl.append(
-    $("<span>")
-      .attr("class", "glyphicon glyphicon-chevron-" + side)
-      .attr("aria-hidden", "true")
-  );
-
-  cntrl.append(
-    $("<span>")
-      .attr("class", "sr-only")
-      .text(text)
-  );
-
-  return cntrl;
+/*
+  Quiz navigation class
+*/
+function Quiz(questions) {
+  this.questions = questions;
+  this.index = 0;
 }
 
+Quiz.prototype.next = function() {
+  // body...
+};
 
+Quiz.prototype.prev = function() {
+  // body...
+};
+
+Quiz.prototype.correct = function() {
+  // body...
+};
+
+Quiz.prototype.wrong = function() {
+  // body...
+};
+
+Quiz.prototype.reset = function() {
+  // body...
+};
 
 
 })(jQuery);

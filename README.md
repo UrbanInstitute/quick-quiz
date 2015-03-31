@@ -69,6 +69,7 @@ Finally, initialize the quiz in your javascript
 ```html
 <script>
   $(function() {
+    // or, $("#quiz").quiz(questions), where questions is an object
     $('#quiz').quiz("unicorns.json");
   });
 </script>
