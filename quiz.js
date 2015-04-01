@@ -24,6 +24,11 @@ $.fn.quiz = function(filename) {
 // using loaded questions json
 function render(opts) {
 
+  var state = {
+    correct : 0,
+    total : 0
+  };
+
   // list of questions to insert into quiz
   var questions = opts.questions;
 
@@ -32,10 +37,6 @@ function render(opts) {
     .attr("data-ride", "carousel");
 
   var height = $quiz.height();
-
-  var $indicators = $("<ol>")
-    .attr("class", "carousel-indicators")
-    .appendTo($quiz);
 
   var $slides = $("<div>")
     .attr("class", "carousel-inner")
@@ -47,24 +48,12 @@ function render(opts) {
 
   $quiz.attr('id', name);
 
-  // add question number indicators
-  $.each(questions, function(i, question) {
-    $("<li>")
-      .attr("data-target", "#" + name)
-      .attr("data-slide-to", i)
-      .attr("class", i ? "" : "active")
-      .appendTo($indicators);
-  });
-
   $.each(questions, function(i, question) {
 
     var $item = $("<div>")
       .attr("class", "item" + (i ? "" : " active"))
       .attr("height", height + "px");
 
-    if (question.image) {
-      $item.attr("background-image", "url(\"" + question.image + "\")");
-    }
 
     $("<div>")
       .attr("class", "quiz-question")
@@ -75,11 +64,55 @@ function render(opts) {
       .attr("class", "quiz-answers")
       .appendTo($item);
 
+    var $img_div;
+    if (question.image) {
+
+      $img_div = $('<div>')
+        .attr('class', 'question-image')
+        .appendTo($item);
+
+      $("<img>")
+        .attr("class", "img-responsive img-rounded")
+        .attr("src", question.image)
+        .appendTo($img_div);
+
+    }
+
     $.each(question.answers, function(j, answer) {
-      $("<button>")
+      var ans_btn = $("<button>")
         .attr('class', 'btn')
         .text(answer)
         .appendTo($answers);
+
+      var correct = (question.correct.index === j);
+
+      // default opts for both outcomes
+      var opts = {
+        allowOutsideClick : false,
+        allowEscapeKey : false,
+        confirmButtonText: "Next Question"
+      };
+
+      if (correct) {
+        opts = $.extend(opts, {
+          title: "Nice!",
+          text: "Correct! Great Job!",
+          type: "success"
+        });
+      } else {
+        opts = $.extend(opts, {
+          title: "Oh No!",
+          text: (
+            "Nope, not quite right! The correct answer was \"" +
+            question.answers[question.correct.index] + "\"."
+          ),
+          type: "error"
+        });
+      }
+      ans_btn.on('click', function() {
+        swal(opts, function() { $quiz.carousel('next'); });
+      });
+
     });
 
     $slides.append($item);
@@ -95,35 +128,5 @@ function render(opts) {
   });
 
 }
-
-
-/*
-  Quiz navigation class
-*/
-function Quiz(questions) {
-  this.questions = questions;
-  this.index = 0;
-}
-
-Quiz.prototype.next = function() {
-  // body...
-};
-
-Quiz.prototype.prev = function() {
-  // body...
-};
-
-Quiz.prototype.correct = function() {
-  // body...
-};
-
-Quiz.prototype.wrong = function() {
-  // body...
-};
-
-Quiz.prototype.reset = function() {
-  // body...
-};
-
 
 })(jQuery);

@@ -18,8 +18,24 @@ html, body {
   width: 60%;
   margin: 0 auto;
   display: block;
+  padding-bottom: 5px;
+}
+
+.quiz-answers .btn {
+  margin-top: 10px;
 }
 
 .quiz-answers > .btn:not(:first-child) {
   margin-left: 10px;
+}
+
+.question-image {
+  width: 100%;
+}
+
+.question-image img {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
