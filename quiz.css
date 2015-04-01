@@ -1,0 +1,41 @@
+html, body {
+  width: 100%;
+  font-family: Lato;
+}
+
+.quiz-question {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.quiz-answers {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.quiz-answers .btn {
+  margin-top: 10px;
+}
+
+.quiz-answers > .btn:not(:first-child) {
+  margin-left: 10px;
+}
+
+.question-image {
+  width: 100%;
+}
+
+.question-image img {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
