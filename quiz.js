@@ -188,7 +188,7 @@ function render(quiz_opts) {
         function next() {
           // if correct answer is selected,
           // keep track in total
-          correct && state.correct++;
+          if (correct) state.correct++;
           $quiz.carousel('next');
           // if we've reached the final question
           // set the results text
@@ -214,12 +214,14 @@ function render(quiz_opts) {
               .eq(question_index+1)
               .addClass('dark');
           }
+          // unbind event handler
+          $('.sweet-overlay').off('click', next);
         }
 
         // advance to next question on OK click or
         // click of overlay
         swal(opts, next);
-        $('.sweet-overlay').click(next);
+        $('.sweet-overlay').on('click', next);
 
       });
 
