@@ -21,11 +21,17 @@ html, body {
   padding-bottom: 5px;
 }
 
-.quiz-answers .btn {
+
+.quiz-button.btn {
   margin-top: 10px;
 }
 
-.quiz-answers > .btn:not(:first-child) {
+.quiz-button.btn:hover {
+  background-color: #0096D2;
+  color: #fff;
+}
+
+.quiz-button.btn:not(:first-child) {
   margin-left: 10px;
 }
 
@@ -38,4 +44,30 @@ html, body {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
+
+}
+
+.correct-text {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.quiz-title {
+  display: block;
+  max-width: 600px;
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.results-ratio {
+  display: block;
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
