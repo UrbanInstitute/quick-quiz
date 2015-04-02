@@ -16,7 +16,8 @@
     },
     {
       "answers": [
-        "True"
+        "True",
+        "False"
       ],
       "correct": {
         "index": 0

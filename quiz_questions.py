@@ -46,13 +46,15 @@ answ_rx = re.compile(r"""
 
 def toJson(filename):
   with open(filename, 'r') as quiz_file:
-    quiz_text = quiz_file.read()
+    # remove comments from quiz file
+    quiz_text = re.sub(r'//(.+)', "", quiz_file.read())
 
+  # find title for quiz
   title = title_rx.match(quiz_text)
-
   if title:
     title = title.group(1).strip()
 
+  # find all questions
   questions = [m.groupdict() for m in q_rx.finditer(quiz_text)]
 
   results = []
@@ -99,6 +101,7 @@ def toJson(filename):
 if __name__ == '__main__':
   if len(sys.argv) == 1:
     print("no quiz file given to script...")
+    toJson("unicorns.quiz")
   else:
     quiz_file = sys.argv[1]
     print("generating {}.json".format(quiz_file.split('.')[0]))

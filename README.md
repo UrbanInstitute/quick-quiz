@@ -1,18 +1,37 @@
 # Quick quiz generator
 
-First, create a quiz file using the following format (named `unicorns.quiz` for example)
+## Example
+
+See an [example quiz](http://urbaninstitute.github.io/quick-quiz/)
+
+## Usage
+
+First, create a quiz text file using the following format (named `unicorns.quiz` for example)
 
 ```
+// example quiz text
+// @bsouthga
+// <- (this is a comment and will be ignored)
+
+// this is the title of the quiz
 # How well do you know real creatures?
 
-
+// this is an example question.
+// the number signifies the question order,
+// meaning questions can be placed in random order
+// within the file
 1) Which of the following is the most real?
 
+  // these are answers, a correct answer
+  // is indicated by a "*"
   - Loch Ness Monster
   - Centaur
   * Unicorn
   - Mermaid
 
+  // this is a reponse text paragraph
+  // it will be displayed upon answering
+  // the question correctly
   The unicorn is a mythical creature. Strong, wild, and fierce, it was impossible to tame by man. Plinie, the Roman naturalist records it as "a very ferocious beast, similar in the rest of its body to a horse, with the head of a deer, the feet of an elephant, the tail of a boar, a deep, bellowing voice, and a single black horn, two cubits in length, standing out in the middle of its forehead."
 
 
@@ -20,14 +39,14 @@ First, create a quiz file using the following format (named `unicorns.quiz` for 
   * True
   - False
 
-
 3) What shade of white is this unicorn?
   - Marshmallow
   * Moon glow
   - Egg shell
 
+  // this image will appear along with
+  // the question pompt
   (image) unicorn.jpg
-
 ```
 
 Then, parse it into a json file using `quiz_questions.py`...
