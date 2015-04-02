@@ -185,14 +185,12 @@ function render(quiz_opts) {
       // bind click event to answer button,
       // using specified sweet alert options
       ans_btn.on('click', function() {
-        swal(opts, function() {
+
+        function next() {
           // if correct answer is selected,
           // keep track in total
           correct && state.correct++;
           $quiz.carousel('next');
-
-
-
           // if we've reached the final question
           // set the results text
           if (last_question) {
@@ -217,7 +215,13 @@ function render(quiz_opts) {
               .eq(question_index+1)
               .addClass('dark');
           }
-        });
+        }
+
+        // advance to next question on OK click or
+        // click of overlay
+        swal(opts, next);
+        $('.sweet-overlay').click(next);
+
       });
 
     });
