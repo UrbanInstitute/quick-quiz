@@ -4,11 +4,6 @@ import re
 import sys
 import json
 
-#
-# get title of quiz
-#
-title_rx = re.compile(r'\s+^#(.+)', re.M)
-
 
 #
 # find all questions and metadata
@@ -42,16 +37,22 @@ answ_rx = re.compile(r"""
 """, re.X | re.M)
 
 
-
 def toJson(filename):
   with open(filename, 'r') as quiz_file:
-    # remove comments from quiz file
-    quiz_text = re.sub(r'//(.+)', "", quiz_file.read())
+    quiz_text = quiz_file.read()
+
+  # find the parent url before comments are removed
+  url = re.search(r'^url:(.+)', quiz_text, re.M)
+  if url:
+    url = url.group(1).strip()
 
   # find title for quiz
-  title = title_rx.match(quiz_text)
+  title = re.search(r'^#(.+)', quiz_text, re.M)
   if title:
     title = title.group(1).strip()
+
+  # remove comments from quiz file
+  quiz_text = re.sub(r'//(.+)', "", quiz_text)
 
   # find all questions
   questions = [m.groupdict() for m in q_rx.finditer(quiz_text)]
@@ -59,6 +60,7 @@ def toJson(filename):
   results = []
 
   for q in questions:
+
     out = {}
 
     out['prompt'] = q['prompt'].strip()
@@ -87,7 +89,8 @@ def toJson(filename):
     json.dump(
       {
         "questions" : sorted(results, key=lambda x: x['number']),
-        "title" : title or ""
+        "title" : title,
+        "url" : url
       },
       outfile,
       sort_keys=True,
@@ -100,7 +103,6 @@ def toJson(filename):
 if __name__ == '__main__':
   if len(sys.argv) == 1:
     print("no quiz file given to script...")
-    toJson("unicorns.quiz")
   else:
     quiz_file = sys.argv[1]
     print("generating {}.json".format(quiz_file.split('.')[0]))

@@ -22,10 +22,10 @@ $.fn.quiz = function(filename) {
 
 // create html structure for quiz
 // using loaded questions json
-function render(opts) {
+function render(quiz_opts) {
 
   // list of questions to insert into quiz
-  var questions = opts.questions;
+  var questions = quiz_opts.questions;
 
   // keep track of the state of correct
   // answers to the quiz so far
@@ -45,11 +45,27 @@ function render(opts) {
 
   var height = $quiz.height();
 
+
+  /*
+    Add carousel indicators
+  */
+  var $indicators = $('<ol>')
+    .attr('class', 'progress-circles')
+    .appendTo($quiz);
+
+  $.each(questions, function(question_index, question) {
+    $('<li>')
+      .attr('class', question_index ? "" : "dark")
+      .appendTo($indicators);
+  });
+
+  /*
+    Slides container div
+  */
   var $slides = $("<div>")
     .attr("class", "carousel-inner")
     .attr("role", "listbox")
     .appendTo($quiz);
-
 
   /*
     Create title slide
@@ -60,7 +76,7 @@ function render(opts) {
     .appendTo($slides);
 
   $('<h1>')
-    .text(opts.title)
+    .text(quiz_opts.title)
     .attr('class', 'quiz-title')
     .appendTo($title_slide);
 
@@ -73,6 +89,7 @@ function render(opts) {
     .text("Take the quiz!")
     .click(function() {
       $quiz.carousel('next');
+      $indicators.addClass('show');
     })
     .appendTo($start_button);
 
@@ -172,6 +189,9 @@ function render(opts) {
           // keep track in total
           correct && state.correct++;
           $quiz.carousel('next');
+
+
+
           // if we've reached the final question
           // set the results text
           if (last_question) {
@@ -181,6 +201,20 @@ function render(opts) {
               Math.round(100*(state.correct/state.total)) +
               "% of the questions correct!"
             );
+            $twitter_link.attr('href', tweet(state, quiz_opts));
+            $facebook_link.attr('href', facebook(state, quiz_opts));
+            $indicators.removeClass('show');
+            // indicate the question number
+            $indicators.find('li')
+              .removeClass('dark')
+              .eq(0)
+              .addClass('dark');
+          } else {
+            // indicate the question number
+            $indicators.find('li')
+              .removeClass('dark')
+              .eq(question_index+1)
+              .addClass('dark');
           }
         });
       });
@@ -207,6 +241,18 @@ function render(opts) {
   var $restart_button = $("<div>")
     .attr("class", "quiz-answers")
     .appendTo($results_slide);
+
+  var $social = $("<div>")
+    .attr('class', 'results-social')
+    .appendTo($results_slide);
+
+  var $twitter_link = $('<a>')
+    .html('<span class="social social-twitter">tweet</span>')
+    .appendTo($social);
+
+  var $facebook_link = $('<a>')
+    .html('<span class="social social-facebook">share</span>')
+    .appendTo($social);
 
   $("<button>")
     .attr('class', 'quiz-button btn')
@@ -258,4 +304,26 @@ function resultsText(state) {
 }
 
 
+function tweet(state, opts) {
+
+  var body = (
+    "I got " + state.correct +
+    " out of " + state.total +
+    " on @urbaninstitute's \"" + opts.title +
+    "\" quiz. Test your knowledge here: " + opts.url
+  );
+
+  return (
+    "http://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(body)
+  );
+
+}
+
+function facebook(state, opts) {
+  return "https://www.facebook.com/sharer/sharer.php?u=" + opts.url;
+}
+
+
 })(jQuery);
+

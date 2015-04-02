@@ -13,6 +13,9 @@ First, create a quiz text file using the following format (named `unicorns.quiz`
 // @bsouthga
 // <- (this is a comment and will be ignored)
 
+// this is the url for the parent
+url: http://urbaninstitute.github.io/quick-quiz/
+
 // this is the title of the quiz
 # How well do you know real creatures?
 
@@ -75,7 +78,8 @@ This produces a formatted json file like this...
     },
     {
       "answers": [
-        "True"
+        "True",
+        "False"
       ],
       "correct": {
         "index": 0
@@ -97,7 +101,8 @@ This produces a formatted json file like this...
       "prompt": "What shade of white is this unicorn?"
     }
   ],
-  "title": "How well do you know real creatures?"
+  "title": "How well do you know real creatures?",
+  "url": "http://urbaninstitute.github.io/quick-quiz/"
 }
 ```
 
