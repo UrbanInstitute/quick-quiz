@@ -31,13 +31,17 @@ function render(opts) {
   // answers to the quiz so far
   var state = {
     correct : 0,
-    total : 0,
-    slides : questions.length
+    total : questions.length
   };
 
   var $quiz = $(this)
     .attr("class", "carousel slide")
     .attr("data-ride", "carousel");
+
+  // unique ID for container to refer to in carousel
+  var name = $quiz.attr("id") || "urban_quiz_" + (++quiz_count);
+
+  $quiz.attr('id', name);
 
   var height = $quiz.height();
 
@@ -46,17 +50,44 @@ function render(opts) {
     .attr("role", "listbox")
     .appendTo($quiz);
 
-  // unique ID for container to refer to in carousel
-  var name = $quiz.attr("id") || "urban_quiz_" + (++quiz_count);
 
-  $quiz.attr('id', name);
+  /*
+    Create title slide
+  */
+  var $title_slide = $("<div>")
+    .attr("class", "item active")
+    .attr("height", height + "px")
+    .appendTo($slides);
 
-  $.each(questions, function(i, question) {
+  $('<h1>')
+    .text(opts.title)
+    .attr('class', 'quiz-title')
+    .appendTo($title_slide);
+
+  var $start_button = $("<div>")
+    .attr("class", "quiz-answers")
+    .appendTo($title_slide);
+
+  $("<button>")
+    .attr('class', 'quiz-button btn')
+    .text("Take the quiz!")
+    .click(function() {
+      $quiz.carousel('next');
+    })
+    .appendTo($start_button);
+
+
+  /*
+    Add all question slides
+  */
+  $.each(questions, function(question_index, question) {
+
+    var last_question = (question_index + 1 === state.total);
 
     var $item = $("<div>")
-      .attr("class", "item" + (i ? "" : " active"))
-      .attr("height", height + "px");
-
+      .attr("class", "item")
+      .attr("height", height + "px")
+      .appendTo($slides);
 
     $("<div>")
       .attr("class", "quiz-question")
@@ -82,18 +113,18 @@ function render(opts) {
 
     // for each possible answer to the question
     // add a button with a click event
-    $.each(question.answers, function(j, answer) {
+    $.each(question.answers, function(answer_index, answer) {
 
       // create an answer button div
       // and add to the answer container
       var ans_btn = $("<button>")
-        .attr('class', 'btn')
+        .attr('class', 'quiz-button btn')
         .text(answer)
         .appendTo($answers);
 
       // This question is correct if it's
       // index is the correct index
-      var correct = (question.correct.index === j);
+      var correct = (question.correct.index === answer_index);
 
       // default opts for both outcomes
       var opts = {
@@ -129,6 +160,10 @@ function render(opts) {
         });
       }
 
+      if (last_question) {
+        opts.confirmButtonText = "View Results!";
+      }
+
       // bind click event to answer button,
       // using specified sweet alert options
       ans_btn.on('click', function() {
@@ -136,20 +171,51 @@ function render(opts) {
           // if correct answer is selected,
           // keep track in total
           correct && state.correct++;
-          // total number of questions answered
-          state.total++;
-          // if we haven't reached the end,
-          // keep sliding to the next question
-          if (state.total < state.slides) {
-            $quiz.carousel('next');
+          $quiz.carousel('next');
+          // if we've reached the final question
+          // set the results text
+          if (last_question) {
+            $results_title.text(resultsText(state));
+            $results_ratio.text(
+              "You got " +
+              Math.round(100*(state.correct/state.total)) +
+              "% of the questions correct!"
+            );
           }
         });
       });
 
     });
 
-    $slides.append($item);
   });
+
+
+  // final results slide
+  var $results_slide = $("<div>")
+    .attr("class", "item")
+    .attr("height", height + "px")
+    .appendTo($slides);
+
+  var $results_title = $('<h1>')
+    .attr('class', 'quiz-title')
+    .appendTo($results_slide);
+
+  var $results_ratio = $('<div>')
+    .attr('class', 'results-ratio')
+    .appendTo($results_slide);
+
+  var $restart_button = $("<div>")
+    .attr("class", "quiz-answers")
+    .appendTo($results_slide);
+
+  $("<button>")
+    .attr('class', 'quiz-button btn')
+    .text("Try again?")
+    .click(function() {
+      state.correct = 0;
+      $quiz.carousel(0);
+    })
+    .appendTo($restart_button);
 
   $quiz.carousel({
     "interval" : false
@@ -161,5 +227,35 @@ function render(opts) {
   });
 
 }
+
+function resultsText(state) {
+
+  var ratio = state.correct / state.total;
+  var text;
+
+  switch (true) {
+    case (ratio === 1):
+      text = "Wow you got a perfect score!";
+      break;
+    case (ratio > 0.9):
+      text = "Awesome job, you got most of them right!";
+      break;
+    case (ratio > 0.60):
+      text = "Pretty good, we'll say that's a pass!";
+      break;
+    case (ratio > 0.5):
+      text = "Well, at least you got half of them right...";
+      break;
+    case (ratio < 0.5 && ratio !== 0):
+      text = "Looks like this was a tough one, better luck next time!";
+      break;
+    case (ratio === 0):
+      text = "Yikes, none correct. Well, maybe it was rigged?";
+      break;
+  }
+  return text;
+
+}
+
 
 })(jQuery);

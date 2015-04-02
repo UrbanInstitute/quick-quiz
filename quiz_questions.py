@@ -24,7 +24,6 @@ q_rx = re.compile(r"""
   \s+(?P<image>\(image\).+)?
   # Extra text to include in response
   \s+(?P<text>(?![-\*]|^\d+\)|\s+\(image\)).+)?
-
 """, re.X | re.M)
 
 

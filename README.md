@@ -101,7 +101,7 @@ This produces a formatted json file like this...
 }
 ```
 
-Next, create a div to contain your quiz and include bootstrap and `quiz.js`
+Finally, create a div to contain your quiz and include bootstrap and `quiz.js`
 
 ```html
 <!DOCTYPE html>
@@ -109,7 +109,9 @@ Next, create a div to contain your quiz and include bootstrap and `quiz.js`
 <head>
   <meta charset="UTF-8">
   <title>Quiz Example</title>
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="sweet-alert.css">
   <link rel="stylesheet" href="quiz.css">
   <style>
     #quiz {
@@ -119,25 +121,18 @@ Next, create a div to contain your quiz and include bootstrap and `quiz.js`
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="col-md-12">
-        <div id="quiz"></div>
-    </div>
+  <div class="container-fluid">
+    <div id="quiz"></div>
   </div>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="sweet-alert.min.js"></script>
   <script src="quiz.js"></script>
+  <script>
+    $(function() {
+      $('#quiz').quiz("unicorns.json");
+    });
+  </script>
 </body>
 </html>
-```
-
-Finally, initialize the quiz in your javascript
-
-```html
-<script>
-  $(function() {
-    // or, $("#quiz").quiz(questions), where questions is an object
-    $('#quiz').quiz("unicorns.json");
-  });
-</script>
 ```
