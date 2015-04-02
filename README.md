@@ -1,36 +1,84 @@
 # Quick quiz generator
 
-First, create an object or json file containing the questions.
+First, create a quiz file using the following format (named `unicorns.quiz` for example)
+
+```
+# How well do you know real creatures?
+
+
+1) Which of the following is the most real?
+
+  - Loch Ness Monster
+  - Centaur
+  * Unicorn
+  - Mermaid
+
+  The unicorn is a mythical creature. Strong, wild, and fierce, it was impossible to tame by man. Plinie, the Roman naturalist records it as "a very ferocious beast, similar in the rest of its body to a horse, with the head of a deer, the feet of an elephant, the tail of a boar, a deep, bellowing voice, and a single black horn, two cubits in length, standing out in the middle of its forehead."
+
+
+2) Unicorns are real?
+  * True
+  - False
+
+
+3) What shade of white is this unicorn?
+  - Marshmallow
+  * Moon glow
+  - Egg shell
+
+  (image) unicorn.jpg
+
+```
+
+Then, parse it into a json file using `quiz_questions.py`...
+```shell
+python quiz_questions.py unicorns.quiz
+```
+
+This produces a formatted json file like this...
 
 ```javascript
 {
-  "questions" : [
+  "questions": [
     {
-      "prompt" : "Which of the following is the most real?",
-      "answers" : [
+      "answers": [
         "Loch Ness Monster",
         "Centaur",
         "Unicorn",
         "Mermaid"
       ],
-      "correct" : {
-        "index" : 2,
-        "text" : "The unicorn is a mythical creature. Strong, wild, and fierce, it was impossible to tame by man. Plinie, the Roman naturalist records it as \"a very ferocious beast, similar in the rest of its body to a horse, with the head of a deer, the feet of an elephant, the tail of a boar, a deep, bellowing voice, and a single black horn, two cubits in length, standing out in the middle of its forehead.\""
-      }
+      "correct": {
+        "index": 2,
+        "text": "The unicorn is a mythical creature. Strong, wild, and fierce, it was impossible to tame by man. Plinie, the Roman naturalist records it as \"a very ferocious beast, similar in the rest of its body to a horse, with the head of a deer, the feet of an elephant, the tail of a boar, a deep, bellowing voice, and a single black horn, two cubits in length, standing out in the middle of its forehead.\""
+      },
+      "number": 1,
+      "prompt": "Which of the following is the most real?"
     },
     {
-      "prompt" : "What shade of white is this unicorn?",
-      "image" : "unicorn.jpg",
-      "answers" : [
+      "answers": [
+        "True"
+      ],
+      "correct": {
+        "index": 0
+      },
+      "number": 2,
+      "prompt": "Unicorns are real?"
+    },
+    {
+      "answers": [
         "Marshmallow",
         "Moon glow",
         "Egg shell"
       ],
-      "correct" : {
-        "index" : 1
-      }
+      "correct": {
+        "index": 1
+      },
+      "image": "unicorn.jpg",
+      "number": 3,
+      "prompt": "What shade of white is this unicorn?"
     }
-  ]
+  ],
+  "title": "How well do you know real creatures?"
 }
 ```
 
