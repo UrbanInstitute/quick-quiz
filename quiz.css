@@ -23,6 +23,7 @@ html, body {
 
 .quiz-button.btn {
   margin-top: 10px;
+  background-color: #ccc;
 }
 
 .quiz-button.btn:hover {
@@ -43,10 +44,15 @@ html, body {
 .results-social,
 .quiz-title
 {
-  max-width: 600px;
   display: block;
   margin: 0 auto;
   text-align: center;
+}
+
+.results-ratio,
+.results-social,
+.quiz-title {
+  max-width: 600px;
 }
 
 .question-image img {
