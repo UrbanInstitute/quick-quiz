@@ -25,6 +25,11 @@ html, body {
   margin-top: 10px;
 }
 
+.quiz-answers .btn:hover {
+  background-color: #0096D2;
+  color: #fff;
+}
+
 .quiz-answers > .btn:not(:first-child) {
   margin-left: 10px;
 }
@@ -39,3 +44,9 @@ html, body {
   margin: 0 auto;
   margin-top: 20px;
 }
+
+.correct-text {
+  margin-top: 10px;
+  font-style: italic;
+}
+
