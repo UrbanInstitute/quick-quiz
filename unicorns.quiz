@@ -2,6 +2,9 @@
 // @bsouthga
 // <- (this is a comment and will be ignored)
 
+// this is the url for the parent
+url: http://urbaninstitute.github.io/quick-quiz/
+
 // this is the title of the quiz
 # How well do you know real creatures?
 

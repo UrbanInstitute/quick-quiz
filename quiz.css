@@ -39,10 +39,18 @@ html, body {
   width: 100%;
 }
 
-.question-image img {
+.question-image img,
+.results-ratio,
+.results-social,
+.quiz-title
+{
   max-width: 600px;
   display: block;
   margin: 0 auto;
+  text-align: center;
+}
+
+.question-image img {
   margin-top: 20px;
 
 }
@@ -53,21 +61,48 @@ html, body {
 }
 
 .quiz-title {
-  display: block;
-  max-width: 600px;
   font-size: 60px;
   font-weight: 300;
-  text-align: center;
-  margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 30px;
 }
 
 .results-ratio {
-  display: block;
-  max-width: 600px;
   margin: 20px auto;
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
+}
+
+.results-social {
+  margin-top: 30px;
+}
+
+.results-social a:not(:first-child) {
+  margin-left: 20px;
+}
+
+.progress-circles {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 40px;
+  top: 40px;
+  display: none;
+}
+
+.progress-circles.show {
+  display: block;
+}
+
+.progress-circles li{
+  list-style: none;
+  display: inline-block;
+  background: #ccc;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.progress-circles li.dark{
+  background: #6b6b6b;
 }
