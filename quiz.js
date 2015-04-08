@@ -254,11 +254,11 @@ function render(quiz_opts) {
     .appendTo($results_slide);
 
   var $twitter_link = $('<a>')
-    .html('<span class="social social-twitter">tweet</span>')
+    .html('<span class="social social-twitter follow-tw"></span>')
     .appendTo($social);
 
   var $facebook_link = $('<a>')
-    .html('<span class="social social-facebook">share</span>')
+    .html('<span class="social social-facebook follow-fb"></span>')
     .appendTo($social);
 
   $("<button>")

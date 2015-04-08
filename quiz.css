@@ -21,10 +21,16 @@ html, body {
   padding-bottom: 5px;
 }
 
-
+.sweet-alert button {
+ border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
 .quiz-button.btn {
   margin-top: 10px;
-  background-color: #ccc;
+  background-color: #ddd;
+    border-radius: 0;
+    text-transform: uppercase;
 }
 
 .quiz-button.btn:hover {
@@ -60,10 +66,13 @@ html, body {
   margin-top: 20px;
 
 }
-
+.results-social{
+ display: table;
+}
 .correct-text {
   margin-top: 10px;
   font-style: italic;
+  font-family: Georgia, serif;
 }
 
 .quiz-title {
@@ -88,16 +97,22 @@ html, body {
 }
 
 .progress-circles {
-  position: absolute;
+  position: relative;
   padding: 0;
   margin: 0;
-  left: 40px;
+/*  left: 40px;*/
+    margin-left: auto;
+    margin-right: auto;
   top: 40px;
   display: none;
 }
 
 .progress-circles.show {
   display: block;
+}
+
+.show{
+ display:table !important; 
 }
 
 .progress-circles li{
@@ -110,5 +125,29 @@ html, body {
   margin-right: 10px;
 }
 .progress-circles li.dark{
-  background: #6b6b6b;
+  background: #1696d2;
+}
+
+
+.follow-tw {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(icons-s973202652e.png);
+  background-position: 0 -993px;
+  height: 32px;
+  width: 32px;
+}
+.follow-tw:hover{
+ background-position: 0 -1401px;   
+}
+.follow-fb {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(icons-s973202652e.png);
+  background-position: 0 -1880px;
+  height: 32px;
+  width: 32px;
+}
+.follow-fb:hover{
+ background-position: 0 -1433px;   
 }
