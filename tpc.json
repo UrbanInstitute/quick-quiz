@@ -1,0 +1,147 @@
+{
+  "questions": [
+    {
+      "answers": [
+        "33 percent",
+        "25 percent",
+        "10 percent",
+        "Trump has proposed eliminating the individual income tax"
+      ],
+      "correct": {
+        "index": 1,
+        "text": "<a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/trumps-huge-tax-cuts\">Trump&#8217;s tax plan</a> would collapse the current seven brackets, which range from 10 to 39.6 percent, into three brackets: 10, 20, and 25 percent. The top rate has <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/statistics/historical-individual-income-tax-parameters\">not been lower than 28 percent</a> since before World War II, when few people paid income taxes."
+      },
+      "number": 1,
+      "prompt": "Donald Trump has proposed lowering the top individual income tax rate from 39.6 percent to what rate?"
+    },
+    {
+      "answers": [
+        "Decrease the percentage who pay no income tax",
+        "Increase the percentage who pay no income tax",
+        "Leave the percentage who pay no income tax roughly unchanged",
+        "Because he&#8217;d eliminate the income tax, no one would pay tax under Trump&#8217;s plan"
+      ],
+      "correct": {
+        "index": 1,
+        "text": "Trump&#8217;s tax plan would <a target=\"_blank\" href=\"http://www.taxpolicycenter.org/taxvox/trump-would-increase-number-households-not-paying-income-taxes\">significantly increase</a> the percentage of households that pay no income tax, primarily because he would quadruple the <a target=\"_blank\" href=\"http://www.taxpolicycenter.org/briefing-book/how-do-standard-deduction-and-itemized-deductions-compare\">standard deduction</a>. In combination with his tax rate cuts, that would increase the share of households paying no income tax in 2017 from 44 to 63 percent. However, as we note in our video &#8220;<a target=\"_blank\" href = \"http://www.taxpolicycenter.org/resources/video-who-doesnt-pay-federal-taxes\">Who doesn&#8217;t pay federal taxes</a>?&#8221; most people who pay no income tax work and thus pay payroll taxes, and virtually everyone pays at least some tax, such as sales taxes, property taxes, and excise taxes on gasoline, alcohol, tobacco, and other products."
+      },
+      "number": 2,
+      "prompt": "In 2012, presidential candidate Mitt Romney made headlines when he referred to the 47 percent of Americans who paid no income tax. How would Trump&#8217;s tax plan change the percentage of Americans not paying individual income taxes?"
+    },
+    {
+      "answers": [
+        "The bottom 20 percent",
+        "The middle 20 percent",
+        "The top 1 percent",
+        "The top 0.1 percent",
+        "Everyone would get roughly the same huge tax cut"
+      ],
+      "correct": {
+        "index": 3,
+        "text": "Trump&#8217;s tax plan would cut taxes for households across the income spectrum, but the largest benefits&mdash;in both dollar and percentage terms&mdash;would <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/how-would-trumps-tax-cuts-affect-different-taxpayers\">go to the highest-income taxpayers</a>. In 2017, the plan would cut taxes for middle-income households by an average of about $2,700 (a 5 percent increase in after-tax income). Low-income households would save an average of about $130 (only a 1 percent boost in after-tax income). In contrast, households in the top 1 percent would see their taxes drop by an average of about $275,000 (about 17.5 percent of their after-tax income), and the top 0.1 percent would get an average of $1.3 million (19 percent of after-tax income)."
+      },
+      "number": 3,
+      "prompt": "Which households (grouped by income) would benefit the most from Donald Trump&#8217;s tax plan?"
+    },
+    {
+      "answers": [
+        "Reduce it a lot over the next 10 years",
+        "Increase it a lot over the next 10 years",
+        "Leave it roughly unchanged over the next 10 years but increase it later",
+        "Leave it roughly unchanged for decades to come"
+      ],
+      "correct": {
+        "index": 1,
+        "text": "Trump tax proposals would <a target=\"_blank\" href =\"http://www.taxpolicycenter.org/taxvox/trump-would-slash-taxes-top-01-percent-average-13-million-add-nearly-10-trillion-debt\">reduce federal revenue by $9.5 trillion</a> over the next decade and add $11.2 trillion to the debt, including interest costs. Some of the proposals, such as limiting the value of some itemized deductions, would increase revenue but would not raise nearly enough to offset the cost of his proposed cuts. Trump has not proposed spending reductions that would significantly offset this cost."
+      },
+      "number": 4,
+      "prompt": "How would Trump&#8217;s tax proposals affect the federal government&#8217;s debt?"
+    },
+    {
+      "answers": [
+        "Trump&#8217;s cuts would be much smaller than either of the earlier tax cuts",
+        "Trump&#8217;s cuts would be about the same size as the earlier tax cuts",
+        "Trump&#8217;s cuts would be somewhat larger than either of the earlier tax cuts",
+        "Trump&#8217;s cuts would be nearly twice the size of either of the earlier tax cuts"
+      ],
+      "correct": {
+        "index": 3,
+        "text": "Trump would cut revenues by 4.0 percent of GDP, nearly <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/trumps-tax-plan-twice-costly-reagans\">twice the size of the Reagan tax cuts (2.1 percent of GDP) and almost three times the size of the</a> Bush tax cuts (1.4 percent of GDP)."
+      },
+      "number": 5,
+      "prompt": "How does the revenue reduction (measured as a share of gross domestic product, or GDP) from Trump&#8217;s proposed tax cuts compare with the revenue reductions of the tax cuts enacted under former presidents Ronald Reagan and George W. Bush?"
+    },
+    {
+      "answers": [
+        "The bottom 20 percent",
+        "The middle 20 percent",
+        "The top 1 percent",
+        "The top 0.1 percent"
+      ],
+      "correct": {
+        "index": 3,
+        "text": "Under Clinton&#8217;s proposals, <a target=\"_blank\" href = \"https://www.taxpolicycenter.org/taxvox/how-would-clintons-tax-proposals-affect-different-taxpayers\">the top 0.1 percent</a>&mdash;taxpayers with income greater than $3.8 million&mdash;would see an average tax increase of nearly $520,000 (7.6 percent of after-tax income). The increase would result almost entirely from her proposed 4 percent surtax on incomes over $5 million and a &#8220;Buffett rule&#8221; that would impose a minimum tax on people with income over $1 million. While her Buffett rule would affect other wealthy taxpayers, most other taxpayers would incur only small tax increases."
+      },
+      "number": 6,
+      "prompt": "Hillary Clinton has proposed tax increases. Which households (grouped by income) would have the largest tax increase (as a percentage of income) under her plan?"
+    },
+    {
+      "answers": [
+        "1 percent",
+        "50 percent",
+        "75 percent",
+        "100 percent"
+      ],
+      "correct": {
+        "index": 2,
+        "text": "<a target = \"_blank\" href = \"http://www.taxpolicycenter.org/publications/analysis-hillary-clintons-tax-proposals\">The top 1 percent of households</a> (those with income over about $700,000) <a target=\"_blank\" href=\"http://www.taxpolicycenter.org/model-estimates/secretary-clintons-tax-plan/secretary-clintons-tax-proposals-baseline-current-law-1\">would pay about 78 percent</a> of Clinton&#8217;s proposed tax increases. Their taxes would increase by an average of about $75,000 (5 percent of after-tax income). Households earning less than about $300,000 would also see their taxes go up a little (but 0.2 percent of after-tax income or less) because Clinton&#8217;s proposed business tax hikes would lead to slightly lower wages."
+      },
+      "number": 7,
+      "prompt": "Roughly how much of Clinton&#8217;s total tax increases are paid by households with income in the top 1 percent?"
+    },
+    {
+      "answers": [
+        "No",
+        "Yes, but it would increase only the top tax rate",
+        "Yes, it would increase the tax rate on income over $1 million"
+      ],
+      "correct": {
+        "index": 0,
+        "text": "Clinton does not propose increasing any current tax rates. <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/clinton-and-sanders-take-two-different-paths-taxing-rich\">Instead</a>, she&#8217;d impose a new 4 percent &#8220;surcharge&#8221; on income over $5 million, levy a new minimum tax (a Buffett rule) on people with income over $1 million, and limit the value of specified tax exemptions and deductions. Those changes would both raise taxes on high earners and further complicate our already complex tax system."
+      },
+      "number": 8,
+      "prompt": "Would Clinton&#8217;s tax plan raise any of the seven tax rates currently levied by the individual income tax?"
+    },
+    {
+      "answers": [
+        "Low-income households",
+        "Middle-income households",
+        "Both low-income and middle-income households",
+        "Only special groups like family caregivers"
+      ],
+      "correct": {
+        "index": 3,
+        "text": "Clinton&#8217;s plan would raise taxes on high earners and would have small or no effects on most other taxpayers. She has <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/hillary-clinton-would-raise-taxes-high-income-households-11-trillion-over-10-years\">proposed new tax credits</a> for family caregivers and households with high out-of-pocket medical expenses, which would lower taxes for qualifying households. However, the Clinton campaign has promised that the candidate will propose tax cuts for low- and middle-income households later in the campaign."
+      },
+      "number": 9,
+      "prompt": "Who gets a tax cut under Clinton&#8217;s tax plan?"
+    },
+    {
+      "answers": [
+        "Decrease the debt substantially over the next 10 years",
+        "Decrease the debt by just a few percentage points over the next 10 years",
+        "Leave the debt roughly unchanged over the next 10 years",
+        "Increase the debt by just a few percentage points over the next 10 years",
+        "Increase the debt substantially over the next 10 years"
+      ],
+      "correct": {
+        "index": 1,
+        "text": "Clinton&#8217;s tax proposals would shave about $1.2 trillion off the nation&#8217;s debt over the next 10 years, only about 4 percent of GDP by the end of the period. However, this total only accounts for revenue changes and savings from interest payments. Because Clinton has also proposed <a target=\"_blank\" href = \"https://www.taxpolicycenter.org/taxvox/two-very-different-paths-taxes-clinton-vs-trump\">several new spending programs</a>, the net effect on the federal debt of all of her budget proposals would be relatively small."
+      },
+      "number": 10,
+      "prompt": "How would Clinton&#8217;s tax plan affect the federal debt (ignoring any spending proposals)?"
+    }
+  ],
+  "title": "Tax Policy Center Candidate Quiz",
+  "url": "http://apps-staging.urban.org/features/quick-quiz/"
+}

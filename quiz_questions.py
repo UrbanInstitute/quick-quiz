@@ -52,7 +52,7 @@ def toJson(filename):
     title = title.group(1).strip()
 
   # remove comments from quiz file
-  quiz_text = re.sub(r'//(.+)', "", quiz_text)
+  # quiz_text = re.sub(r'//(.+)', "", quiz_text)
 
   # find all questions
   questions = [m.groupdict() for m in q_rx.finditer(quiz_text)]

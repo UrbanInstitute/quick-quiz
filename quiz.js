@@ -109,7 +109,7 @@ function render(quiz_opts) {
 
     $("<div>")
       .attr("class", "quiz-question")
-      .text(question.prompt)
+      .html(question.prompt)
       .appendTo($item);
 
     var $answers = $("<div>")
@@ -137,7 +137,7 @@ function render(quiz_opts) {
       // and add to the answer container
       var ans_btn = $("<button>")
         .attr('class', 'quiz-button btn')
-        .text(answer)
+        .html(answer)
         .appendTo($answers);
 
       // This question is correct if it's
@@ -172,8 +172,13 @@ function render(quiz_opts) {
           text: (
             "Nope, not quite right!<br/><br/>" +
             "The correct answer was \"" +
-            question.answers[question.correct.index] + "\"."
-          ),
+            question.answers[question.correct.index] + "\"." + (
+            question.correct.text ?
+            ("<div class=\"correct-text\">" +
+              question.correct.text +
+              "</div>"
+            ) : "")
+            ),
           type: "error"
         });
       }
