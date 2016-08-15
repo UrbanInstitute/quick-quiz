@@ -50,15 +50,7 @@ function render(quiz_opts) {
   /*
     Add carousel indicators
   */
-  var $indicators = $('<ol>')
-    .attr('class', 'progress-circles')
-    .appendTo($quiz);
 
-  $.each(questions, function(question_index, question) {
-    $('<li>')
-      .attr('class', question_index ? "" : "dark")
-      .appendTo($indicators);
-  });
 
   /*
     Slides container div
@@ -85,15 +77,36 @@ function render(quiz_opts) {
     .attr("class", "quiz-answers")
     .appendTo($title_slide);
 
+var $indicators = $('<ol>')
+    .attr('class', 'progress-circles')
+
   $("<button>")
     .attr('class', 'quiz-button btn')
     .text("Take the quiz!")
     .click(function() {
       $quiz.carousel('next');
       $indicators.addClass('show');
+
+    $(".active .quiz-button.btn").each(function(){
+      console.log(this.getBoundingClientRect())
+      $(this).css("margin-left", function(){
+        return ((250 - this.getBoundingClientRect().width) *0.5) + "px"
+      })
+    })
+
+
+
     })
     .appendTo($start_button);
+  
+  $indicators
+    .appendTo($quiz);
 
+  $.each(questions, function(question_index, question) {
+    $('<li>')
+      .attr('class', question_index ? "" : "dark")
+      .appendTo($indicators);
+  });
 
   /*
     Add all question slides
@@ -135,7 +148,7 @@ function render(quiz_opts) {
 
       // create an answer button div
       // and add to the answer container
-      var ans_btn = $("<button>")
+      var ans_btn = $("<div>")
         .attr('class', 'quiz-button btn')
         .html(answer)
         .appendTo($answers);
@@ -158,7 +171,7 @@ function render(quiz_opts) {
       if (correct) {
         opts = $.extend(opts, {
           title: "Nice!",
-          text: "Correct! Great Job!" + (
+          text: "Well done" + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
               question.correct.text +
@@ -168,7 +181,7 @@ function render(quiz_opts) {
         });
       } else {
         opts = $.extend(opts, {
-          title: "Oh No!",
+          title: "Drat",
           text: (
             "Nope, not quite right!<br/><br/>" +
             "The correct answer was \"" +
@@ -184,7 +197,7 @@ function render(quiz_opts) {
       }
 
       if (last_question) {
-        opts.confirmButtonText = "View Results!";
+        opts.confirmButtonText = "See your results";
       }
 
       // bind click event to answer button,
@@ -196,10 +209,11 @@ function render(quiz_opts) {
           // keep track in total
           if (correct) state.correct++;
           $quiz.carousel('next');
+
           // if we've reached the final question
           // set the results text
           if (last_question) {
-            $results_title.text(resultsText(state));
+            $results_title.html(resultsText(state));
             $results_ratio.text(
               "You got " +
               Math.round(100*(state.correct/state.total)) +
@@ -233,6 +247,7 @@ function render(quiz_opts) {
 
     });
 
+
   });
 
 
@@ -256,6 +271,7 @@ function render(quiz_opts) {
 
   var $social = $("<div>")
     .attr('class', 'results-social')
+    .html('<div id = "social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!</div>')
     .appendTo($results_slide);
 
   var $twitter_link = $('<a>')
@@ -293,19 +309,19 @@ function resultsText(state) {
 
   switch (true) {
     case (ratio === 1):
-      text = "Wow you got a perfect score!";
+      text = "Wow&mdash;perfect score!";
       break;
     case (ratio > 0.9):
-      text = "Awesome job, you got most of them right!";
+      text = "Awesome job, you got most of them right.";
       break;
     case (ratio > 0.60):
-      text = "Pretty good, we'll say that's a pass!";
+      text = "Pretty good, we'll say that's a pass.";
       break;
     case (ratio > 0.5):
-      text = "Well, at least you got half of them right...";
+      text = "Well, at least you got half of them right&hellip;";
       break;
     case (ratio < 0.5 && ratio !== 0):
-      text = "Looks like this was a tough one, better luck next time!";
+      text = "Looks like this was a tough one, better luck next time.";
       break;
     case (ratio === 0):
       text = "Yikes, none correct. Well, maybe it was rigged?";
@@ -321,7 +337,7 @@ function tweet(state, opts) {
   var body = (
     "I got " + state.correct +
     " out of " + state.total +
-    " on @urbaninstitute's \"" + opts.title +
+    " on @taxpolicycenter’s \"" + opts.title +
     "\" quiz. Test your knowledge here: " + opts.url
   );
 

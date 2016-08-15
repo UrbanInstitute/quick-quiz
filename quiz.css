@@ -15,10 +15,14 @@ html, body {
 
 .quiz-answers {
   text-align: center;
-  width: 60%;
+  width: 250px;
   margin: 0 auto;
   display: block;
   padding-bottom: 5px;
+}
+.quiz-answers .btn{
+  float: left;
+  clear: both;
 }
 
 .sweet-alert button {
@@ -29,8 +33,11 @@ html, body {
 .quiz-button.btn {
   margin-top: 10px;
   background-color: #ddd;
-    border-radius: 0;
-    text-transform: uppercase;
+  border-radius: 0;
+  text-transform: uppercase;
+  white-space: normal !important;
+  max-width: 250px;
+  width: 250px;
 }
 
 .quiz-button.btn:hover {
@@ -38,9 +45,7 @@ html, body {
   color: #fff;
 }
 
-.quiz-button.btn:not(:first-child) {
-  margin-left: 10px;
-}
+
 
 .question-image {
   width: 100%;
@@ -89,7 +94,13 @@ html, body {
 }
 
 .results-social {
-  margin-top: 30px;
+    width: 270px;
+    clear: both;
+    padding-top: 20px;
+}
+#social-text{
+  margin-bottom: 20px;
+  width: 275px;
 }
 
 .results-social a:not(:first-child) {
@@ -150,4 +161,22 @@ html, body {
 }
 .follow-fb:hover{
  background-position: 0 -1433px;   
+}
+
+
+
+
+
+
+@media (max-width: 540px){
+.quiz-question{
+  font-size: 20px;
+}
+.sweet-alert {
+      margin-top: -251px !important;
+      position: absolute;
+  }
+.sweet-alert h2{
+  display: none;
+}
 }
