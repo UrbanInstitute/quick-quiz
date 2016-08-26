@@ -135,6 +135,7 @@ html, body {
 
 .progress-circles.show {
   display: block;
+  margin-bottom: 250px;
 }
 
 .show{
@@ -192,6 +193,9 @@ html, body {
 }
 
 @media (max-width: 540px){
+  h1{
+    font-size: 50px !important;
+  }
 .quiz-question{
   font-size: 20px;
 }
@@ -202,4 +206,16 @@ html, body {
 .sweet-alert h2{
   display: none;
 }
+}
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    font-family: Lato;
+    font-size: 11px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    font-weight: 300;
+    font-style: italic;    z-index: 999;
 }

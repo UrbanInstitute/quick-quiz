@@ -119,6 +119,14 @@
   <div class="container-fluid">
     <div id="quiz"></div>
   </div>
+
+<div id = "footer">
+  <div id = "footer_text">
+    Revenue and distribution estimates are from our analysis of Donald Trump&#8217;s preliminary tax plan, prior to his August 8 speech at the Detroit Economic Club where he outlined a new tax plan. Our analysis of Trump&#8217;s updated plan is forthcoming; we will update this quiz when those data are available
+  </div>
+</div>
+
+
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="sweet-alert.min.js"></script>
@@ -134,11 +142,13 @@ $(window).on("scroll", function(event){
             // console.log("down")
          animating = true;
          $(".topnav").finish().animate({top:"-80px"}, 600, function(){ animating = false})
+         // $("#footer").finish().animate({bottom:"0px"}, 600, function(){ animating = false})
      } else {
         // upscroll code
         // console.log("up")
         animating = true;
         $(".topnav").finish().animate({top:"0px"}, 600, function(){ animating = false})
+         // $("#footer").finish().animate({bottom:"-80px"}, 600, function(){ animating = false})
      }
     }
    lastScrollTop = st;
