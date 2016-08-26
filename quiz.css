@@ -53,6 +53,7 @@ html, body {
     max-width: 500px;
     margin-bottom: -80px;
     margin: 0 auto;
+    margin-top: 120px;
 }
 
 .question-image img,
@@ -90,6 +91,7 @@ html, body {
   font-weight: 300;
   margin-top: 100px;
   margin-bottom: 30px;
+  margin-top: 160px;
 }
 
 .results-ratio {
@@ -106,6 +108,14 @@ html, body {
 #social-text{
   margin-bottom: 20px;
   width: 275px;
+}
+.social.social-twitter.follow-tw{
+    left: 98px;
+    position: relative;
+}
+.social.social-facebook.follow-fb{
+      left: 85px;
+    position: relative;
 }
 
 .results-social a:not(:first-child) {

@@ -8,6 +8,7 @@
 // keep track of number of quizes added to page
 var quiz_count = 0;
 
+
 // add jQuery selection method to create
 // quiz structure from question json file
 // "filename" can be path to question json

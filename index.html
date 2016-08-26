@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Quiz Example</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-  <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="sweet-alert.css">
   <link rel="stylesheet" href="quiz.css">
+  <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+  <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- <link rel="stylesheet" href="bootstrap-3.3.2/css/bootstrap.css"> -->
+  <link rel='stylesheet' href='css/style.css'>
   <style>
     #quiz {
       height: 600px;
@@ -17,6 +22,100 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MKBD2W"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MKBD2W');</script>
+  <!-- End Google Tag Manager -->
+
+      <!-- Navigation -->
+      <!-- Nav hides at less than 600px --> 
+    <nav class="navbar navbar-default navbar-fixed-top hidesharenav" role="navigation" id="topNav">
+        <div class="container">     
+                <div id="share">  
+                    <div id="logo"><a href="http://taxpolicycenter.org" target="_blank"><img id="tpcLogo" src="images/tpc.png" alt="Tax Policy Center" /><img id="smalltpc" src="images/tpc.jpg" alt="Tax Policy Center" /></a>
+                    </div>
+                    <div id="shareMaster">
+                        <div id="shareCircle" class="circle">
+                            <i class="fa fa-share"></i>
+                        </div>
+                    </div>
+                    <div id="socials">
+                        <a href="http://twitter.com/intent/tweet?text=A%20new%20feature%20from%20%40TaxPolicyCenter%20explains%20all%20of%20the%20presidential%20candidates%20tax%20proposals%20%20http%3A%2F%2Ftpc.io%2Felection%20%23election2016" target="_blank">
+                            <div id="twitter" class="circle">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://tpc.io/election" target="_blank">
+                            <div id="facebook" class="circle">
+                                <i class="fa fa-facebook"></i>
+                            </div>
+                        </a>
+                        <a href="mailto:%20?Subject=Candidates Tax Proposals&amp;Body=Hi! I thought you'd be interested in this new interactive feature from the Tax Policy Center explaining everything you need to know about the presidential candidates tax proposals.  http://tpc.io/election" target="_blank">
+                            
+                            
+        
+                            <div id="email" class="circle">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                </div><!-- share -->
+
+     
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<!-- Mobile Nav Only shows when Screen Res less than 600px -->    
+<nav class="navbar navbar-default navbar-fixed-top mobilenav">
+      <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.taxpolicycenter.org/"><img src="images/tpc.jpg" width="47" height="40" alt="TPC Logo"></a>
+      </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+    <li class="active"><a href="http://taxvox.taxpolicycenter.org/">TaxVox</a></li>
+    <li><a href="http://www.taxpolicycenter.org/">Tax Policy Center</a></li>
+   <li class="active"><a href="http://election2016.taxpolicycenter.org/">Election Blog</a></li>
+            <li class="social"><a href="http://twitter.com/intent/tweet?text=A%20new%20feature%20from%20%40TaxPolicyCenter%20explains%20all%20of%20the%20presidential%20candidates%20tax%20proposals%20%20http%3A%2F%2Furbn.is%2F1hEwVGW%20%23election2016" target="_blank"><img src="images/twitter.png"></a></li>
+             <li class="social"><a href="https://www.facebook.com/sharer/sharer.php?u=http://urbn.is/1hEwVGW" target="_blank"><img src="images/fb.png"></a></li>
+              <li class="social"><a href="mailto:%20?Subject=Candidates Tax Proposals&amp;Body=Hi! I thought you'd be interested in this new interactive feature from the Tax Policy Center explaining everything you need to know about the presidential candidates tax proposals. http://urbn.is/1hEwVGW" target="_blank"><img src="images/mail.png"></a></li>
+            
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+<!-- Nav hides at less than 600px --> 
+<div class="topnav">
+  <div class="container">
+      <ul>
+          <li class="home"><a href="http://taxvox.taxpolicycenter.org/" target="_blank">TaxVox</a></li>
+          <li class="about"><a href="http://www.taxpolicycenter.org/" target="_blank">Tax Policy Center</a></li>
+          <li class="news"><a href="http://election2016.taxpolicycenter.org/" target="_blank">Election Blog</a></li>
+      </ul>
+   </div>
+</div>
+        
+      
+
+<!-- Begin Body -->
+
+
+
   <div class="container-fluid">
     <div id="quiz"></div>
   </div>
@@ -25,9 +124,39 @@
   <script src="sweet-alert.min.js"></script>
   <script src="quiz.js"></script>
   <script>
+     var lastScrollTop = 0;
+     var animating = false;
+$(window).on("scroll", function(event){
+   var st = $(this).scrollTop();
+   if(! animating){
+     console.log(st, lastScrollTop)
+     if (st > lastScrollTop){
+            // console.log("down")
+         animating = true;
+         $(".topnav").finish().animate({top:"-80px"}, 600, function(){ animating = false})
+     } else {
+        // upscroll code
+        // console.log("up")
+        animating = true;
+        $(".topnav").finish().animate({top:"0px"}, 600, function(){ animating = false})
+     }
+    }
+   lastScrollTop = st;
+});
+
+
     $(function() {
       $('#quiz').quiz("tpc.json");
     });
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68918905-2', 'auto');
+  ga('send', 'pageview');
   </script>
 </body>
 </html>

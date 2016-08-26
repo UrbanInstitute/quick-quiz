@@ -1,0 +1,107 @@
+html.easy-sidebar-active {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	transition: 0.2s ease;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body.toggled {
+	-webkit-transform: translateX(250px);
+	transform: translateX(250px);
+}
+
+.navbar.easy-sidebar {
+	transition: 0.2s ease;
+	position: absolute;
+	width: 250px;
+	top: 0;
+	left: -250px;
+	min-height: 100%;
+	border-radius: 0;
+	margin: 0;
+	z-index: 9999;
+}
+
+.navbar.easy-sidebar.toggled {
+	-webkit-transform: translateX(250px);
+	transform: translateX(250px);
+}
+
+.easy-sidebar .btn {
+	width: 100%;
+}
+
+.navbar.easy-sidebar .navbar-header {
+	margin: 0 -15px;
+	float: none;
+}
+
+.navbar.easy-sidebar .navbar-brand {
+	margin: 0;
+}
+
+.navbar.easy-sidebar .navbar-toggle {
+	display: inline-block;
+}
+.navbar.easy-sidebar .navbar-toggle span.icon-bar:nth-child(2) {
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: translate(2px, -5px) rotate(45deg);
+	transform: translate(2px, -5px) rotate(45deg)
+}
+.navbar.easy-sidebar .navbar-toggle span.icon-bar:nth-child(3) {
+	display: none;
+}
+.navbar.easy-sidebar .navbar-toggle span.icon-bar:nth-child(4) {
+	-webkit-transform-origin: 0 50%;
+	transform-origin: 0 50%;
+	-webkit-transform: translate(2px, 4.5px) rotate(-45deg);
+	transform: translate(2px, 4.5px) rotate(-45deg);
+}
+
+.navbar.easy-sidebar .nav.navbar-nav {
+	margin: 7.5px -15px;
+	float: none;
+}
+.navbar.easy-sidebar .nav.navbar-nav>li {
+	float: none;
+}
+.navbar.easy-sidebar .nav.navbar-nav>li>a {
+	padding: 10px 15px;
+}
+
+.navbar.easy-sidebar .navbar-nav .open .dropdown-menu .divider {
+	box-shadow: 0 1px 0 rgba(255,255,255, 0.1);
+}
+
+
+.navbar.easy-sidebar .navbar-form {
+	padding: 10px 15px;
+	margin: 8px -15px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.1);
+}
+.navbar.easy-sidebar .navbar-form .form-group {
+	margin-bottom: 5px;
+	display: block;
+}
+.navbar.easy-sidebar .navbar-form .form-group .form-control {
+	display: block;
+	width: 100%;
+}
+
+@media (max-width:  768px) {
+	body.toggled {
+		position: fixed;
+	}
+}

@@ -1,0 +1,5 @@
+/* For older IE versions 8 and below */
+body.toggled .navbar.easy-sidebar {
+	-webkit-transform: translateX(250px);
+	transform: translateX(250px);
+}

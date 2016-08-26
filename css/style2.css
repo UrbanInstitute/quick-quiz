@@ -1,0 +1,76 @@
+
+/* general styles */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* padded section */
+
+.pad-section { padding: 50px 0; }
+
+.pad-section img { width: 100%; }
+
+/* vertical-centered text */
+
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text-vcenter h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+/* additional sections */
+
+#box1 {
+  background: darkblue;
+  color: white;
+  display: table;
+  height: 300px;
+  width: 100%;
+}
+
+#box2 {
+  background-color: #EA8200;
+  color: white;
+  height: 100%;
+}
+
+#box3 {
+  background-color: #182C3C;
+  color: white;
+  height: 100%;
+}
+
+footer { padding: 20px 0; }
+
+footer .glyphicon {
+  color: #333333;
+  font-size: 60px;
+}
+
+footer .glyphicon:hover { color: #EE2E24; }
+
+.goToTop {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 1;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+nav li { background: #f8f8f8; }
