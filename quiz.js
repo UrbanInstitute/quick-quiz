@@ -119,7 +119,16 @@ var $indicators = $('<ol>')
       .attr("class", "item")
       .attr("height", height + "px")
       .appendTo($slides);
-
+    var $img_div;
+    if (question.image) {
+      $img_div = $('<div>')
+        .attr('class', 'question-image')
+        .appendTo($item);
+      $("<img>")
+        .attr("class", "img-responsive")
+        .attr("src", question.image)
+        .appendTo($img_div);
+    }
     $("<div>")
       .attr("class", "quiz-question")
       .html(question.prompt)
@@ -131,16 +140,7 @@ var $indicators = $('<ol>')
 
     // if the question has an image
     // append a container with the image to the item
-    var $img_div;
-    if (question.image) {
-      $img_div = $('<div>')
-        .attr('class', 'question-image')
-        .appendTo($item);
-      $("<img>")
-        .attr("class", "img-responsive img-rounded")
-        .attr("src", question.image)
-        .appendTo($img_div);
-    }
+
 
     // for each possible answer to the question
     // add a button with a click event

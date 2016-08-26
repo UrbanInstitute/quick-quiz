@@ -5,10 +5,11 @@ html, body {
 
 .quiz-question {
   width: 100%;
+  max-width: 500px;
   display: block;
   margin: 0 auto;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -48,7 +49,10 @@ html, body {
 
 
 .question-image {
-  width: 100%;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: -80px;
+    margin: 0 auto;
 }
 
 .question-image img,
@@ -59,6 +63,7 @@ html, body {
   display: block;
   margin: 0 auto;
   text-align: center;
+  padding-top: 20px !important;
 }
 
 .results-ratio,
@@ -165,7 +170,10 @@ html, body {
 
 
 
-
+.sweet-alert {
+      margin-top: -251px !important;
+      position: absolute;
+  }
 
 
 @media (max-width: 540px){
