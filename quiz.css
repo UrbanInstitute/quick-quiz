@@ -185,6 +185,11 @@ html, body {
       position: absolute;
   }
 
+.alert-img{
+    width: 100%;
+    margin-top: 30px;
+    display: block;
+}
 
 @media (max-width: 540px){
 .quiz-question{

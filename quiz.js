@@ -206,6 +206,7 @@ var $indicators = $('<ol>')
       ans_btn.on('click', function() {
 
         function next() {
+          $('html,body').delay( 500 ).animate({ scrollTop: 0 }, 'slow');
           // if correct answer is selected,
           // keep track in total
           if (correct) state.correct++;
@@ -312,13 +313,13 @@ function resultsText(state) {
     case (ratio === 1):
       text = "Wow&mdash;perfect score!";
       break;
-    case (ratio > 0.9):
+    case (ratio >= 0.9):
       text = "Awesome job, you got most of them right.";
       break;
-    case (ratio > 0.60):
+    case (ratio >= 0.60):
       text = "Pretty good, we'll say that's a pass.";
       break;
-    case (ratio > 0.5):
+    case (ratio >= 0.5):
       text = "Well, at least you got half of them right&hellip;";
       break;
     case (ratio < 0.5 && ratio !== 0):
