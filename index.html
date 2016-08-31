@@ -125,6 +125,9 @@
   <div id = "footer_text">
     Revenue and distribution estimates are from our analysis of Donald Trump&#8217;s preliminary tax plan, prior to his August 8 speech at the Detroit Economic Club where he outlined a new tax plan. Our analysis of Trump&#8217;s updated plan is forthcoming; we will update this quiz when those data are available
   </div>
+  <div id = "credits-button">View photo credits</div>
+  <div id = "github-link">Copyright &copy; <a href = "http://www.urban.org/">Urban Institute</a> August 2016. <a href = "https://github.com/UI-Research/presidential-candidate-quiz">View this project on Github</a>.</div>
+  <div id = "credits-text"></div>
 </div>
 
 
@@ -133,6 +136,29 @@
   <script src="sweet-alert.min.js"></script>
   <script src="quiz.js"></script>
   <script>
+
+  $("#credits-button").click(function(){
+    var text = "Lorem dim sum deep fried garlicky fish ball chee cheong fun with barbecued pork steamed radish cake steamed bun with premium lotus paste cabbage roll paekuat quail egg shomai pancit canton guisado fookien style humba pao"
+    if($(this).hasClass("open")){
+      $(this).removeClass("open")
+      $("#credits-button").text("View photo credits")
+      $("#footer").animate({
+        height: "50px"
+      }, function(){
+          $("#credits-text").text("")
+      })      
+    }else{
+      $(this).addClass("open")
+      $("#credits-button").text("Hide photo credits")
+      $("#credits-text").text(text)
+      $("#footer").animate({
+        height: "100px"
+      })    
+    }
+
+  })
+
+
      var lastScrollTop = 0;
      var animating = false;
 $(window).on("scroll", function(event){
