@@ -300,6 +300,13 @@ var $dummy = $("<div>")
     .html('<span class="social social-facebook follow-fb"></span>')
     .appendTo($social);
 
+  $social.css("margin-bottom","400px")
+
+var $dummy3 = $("<div>")
+  .text("a")
+  .css("color","white")
+  .appendTo($results_slide)
+
   $("<button>")
     .attr('class', 'quiz-button btn')
     .text("Try again?")
