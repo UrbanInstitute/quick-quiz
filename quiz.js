@@ -73,10 +73,21 @@ function render(quiz_opts) {
     .text(quiz_opts.title)
     .attr('class', 'quiz-title')
     .appendTo($title_slide);
+  $('<img>')
+    .attr('src','images/photos/home.jpg')
+    .css("width","500px")
+    .css("margin","0 auto")
+    // .attr('class', 'quiz-title')
+    .appendTo($title_slide);
 
   var $start_button = $("<div>")
     .attr("class", "quiz-answers")
+    .css("margin-bottom","400px")
     .appendTo($title_slide);
+var $dummy2 = $("<div>")
+  .text("a")
+  .css("color","white")
+  .appendTo($title_slide)
 
 var $indicators = $('<ol>')
     .attr('class', 'progress-circles')
