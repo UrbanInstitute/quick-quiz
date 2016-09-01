@@ -138,21 +138,40 @@
   <script>
 
   $("#credits-button").click(function(){
-    var text = "Lorem dim sum deep fried garlicky fish ball chee cheong fun with barbecued pork steamed radish cake steamed bun with premium lotus paste cabbage roll paekuat quail egg shomai pancit canton guisado fookien style humba pao"
+    var text = "Promotional image: Cover Photos by Joshua Lott and Jeff Swensen/Getty Images. Illustration by Lydia Thompson/Urban Institute. Question 1: Photo by Isaac Brekken/AP Photo. Question 2: Photo by David Goldman/AP Photo. Question 3: Photo by Mark Lennihan/AP Photo. Question 4: Photo by Evan Vucci/AP Photo. Question 5: Photo by Lederhandler/AP Photo. Question 6: Photo by Marcio Joese Sanchez/AP Photo. Question 7: Photo by Nati Harnik/AP Photo. Question 8: Photo by Andrew Harnik/AP Photo. Question 9: Photo by Nati Harnik/AP Photo. Question 10: Photo by Jacquelyn Martin/AP Photo."
+    var W = window.innerWidth;
+    var shorter, taller;
+    if(W > 1300){
+      shorter = "50px"
+    }
+    else if(W > 665){
+      shorter = "65px";
+    }
+    else if(W > 460){
+      shorter = "75px"
+    }
+    else if(W >340){
+      shorter = "90px"
+    }else{
+      shorter = "115px"
+    }
+    // shorter = $("#footer").css("height")
+    taller = (parseInt(shorter.replace("px",""))*2.8) + "px"
+    // else if(W <=)
     if($(this).hasClass("open")){
       $(this).removeClass("open")
       $("#credits-button").text("View photo credits")
       $("#footer").animate({
-        height: "50px"
+        height: shorter
       }, function(){
-          $("#credits-text").text("")
+          $("#credits-text").html("")
       })      
     }else{
       $(this).addClass("open")
       $("#credits-button").text("Hide photo credits")
-      $("#credits-text").text(text)
+      $("#credits-text").html(text)
       $("#footer").animate({
-        height: "100px"
+        height: taller
       })    
     }
 

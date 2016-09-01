@@ -220,6 +220,18 @@ html, body {
     font-weight: 300;
     font-style: italic;    z-index: 999;
 }
+@media (max-width: 1300px) {
+  #footer{ height: 65px;}
+}
+@media (max-width: 665px) {
+  #footer{ height: 75px;}
+}
+@media (max-width: 460px) {
+  #footer{ height: 90px;}
+}
+@media (max-width: 340px) {
+  #footer{ height: 115px;}
+}
 #footer a{
   color: #0096d2 !important;
 }
