@@ -136,6 +136,7 @@ html, body {
 .progress-circles.show {
   display: block;
   margin-bottom: 450px;
+  height: 500px;
 }
 
 .show{
