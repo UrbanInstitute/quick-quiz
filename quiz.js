@@ -80,6 +80,8 @@ function render(quiz_opts) {
 
 var $indicators = $('<ol>')
     .attr('class', 'progress-circles')
+var $dummy = $("<div>")
+  .text(" ")
 
   $("<button>")
     .attr('class', 'quiz-button btn')
@@ -102,6 +104,8 @@ var $indicators = $('<ol>')
   
   $indicators
     .appendTo($quiz);
+  $dummy
+    .appendTo($quiz)
 
   $.each(questions, function(question_index, question) {
     $('<li>')
