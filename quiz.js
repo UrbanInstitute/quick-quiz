@@ -81,7 +81,8 @@ function render(quiz_opts) {
 var $indicators = $('<ol>')
     .attr('class', 'progress-circles')
 var $dummy = $("<div>")
-  .text(" ")
+  .text("a")
+  .css("color","white")
 
   $("<button>")
     .attr('class', 'quiz-button btn')

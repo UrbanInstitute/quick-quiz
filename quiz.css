@@ -228,7 +228,10 @@ html, body {
   #footer{ height: 75px;}
 }
 @media (max-width: 460px) {
-  #footer{ height: 90px;}
+  #footer{
+    height: 90px;
+    /*position: relative;*/
+  }
 }
 @media (max-width: 340px) {
   #footer{ height: 115px;}
