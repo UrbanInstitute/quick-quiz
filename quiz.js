@@ -160,7 +160,7 @@ var $indicators = $('<ol>')
 
       // default opts for both outcomes
       var opts = {
-        allowOutsideClick : false,
+        allowOutsideClick : true,
         allowEscapeKey : false,
         confirmButtonText: "Next Question",
         html : true,
