@@ -85,7 +85,7 @@
       },
       "image": "images/photos/img6.jpg",
       "number": 6,
-      "prompt": "Which households (grouped by income) would benefit the most from Hillary Clinton&#8217;s tax proposals?"
+      "prompt": "Which households (grouped by income) would benefit the least from Hillary Clinton&#8217;s tax proposals?"
     },
     {
       "answers": [
@@ -145,6 +145,6 @@
       "prompt": "How would Clinton&#8217;s tax proposals affect the federal government&#8217;s debt?"
     }
   ],
-  "title": "Presidential Candidate Quiz",
+  "title": "Presidential Candidate Tax Quiz",
   "url": "http://apps-staging.urban.org/features/quick-quiz/"
 }
