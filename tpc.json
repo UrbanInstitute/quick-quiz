@@ -9,7 +9,7 @@
       ],
       "correct": {
         "index": 0,
-        "text": "<a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/we-are-learning-less-about-trumps-tax-plan-not-more\">Trump&#8217;s tax plan</a> would collapse the current seven brackets, which range from 10 percent to 39.6 percent, into three brackets: 12, 25, and 33 percent. Trump would use the same tax brackets as outlined in <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/ryan-proposes-big-tax-cuts-business-and-investors-moves-towards-cash-flow-tax\">Speaker Ryan and the House Republican&#8217;s tax proposal</a>."
+        "text": "<a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/we-are-learning-less-about-trumps-tax-plan-not-more\">Trump&#8217;s tax plan</a> would collapse the current seven brackets, which range from 10 percent to 39.6 percent, into three brackets: 12, 25, and 33 percent. Those are the same tax brackets proposed in <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/ryan-proposes-big-tax-cuts-business-and-investors-moves-towards-cash-flow-tax\">Speaker Ryan and the House Republican&#8217;s tax plan</a>."
       },
       "image": "images/photos/img1.jpg",
       "number": 1,
@@ -39,7 +39,7 @@
       ],
       "correct": {
         "index": 3,
-        "text": "Trump&#8217;s tax plan would cut taxes for households across the income spectrum, but the largest benefits&mdash;in both dollar and percentage terms&mdash;would <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/how-would-trumps-tax-cuts-affect-different-taxpayers\">go to the highest-income taxpayers</a>. Trump&#8217;s tax proposals for eliminating the estate tax, reforming business taxes, and cutting individual income tax rates all benefit the wealthiest taxpayers the most.<img class = \"alert-img\" src = \"images/charts/q3.png\"/>"
+        "text": "Trump&#8217;s tax plan would cut taxes for households across the income spectrum, but the largest benefits&mdash;in both dollar and percentage terms&mdash;would <a target = \"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/how-would-trumps-tax-cuts-affect-different-taxpayers\">go to the highest-income taxpayers</a>. Trump&#8217;s proposals to eliminate the estate tax, reform business taxes, and cut individual income tax rates would all benefit the wealthiest taxpayers the most.<img class = \"alert-img\" src = \"images/charts/q3.png\"/>"
       },
       "image": "images/photos/img3.jpg",
       "number": 3,
@@ -53,7 +53,7 @@
       ],
       "correct": {
         "index": 1,
-        "text": "Based on our analysis of Trump&#8217;s original tax proposal, he would <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/trump-would-slash-taxes-top-01-percent-average-13-million-add-nearly-10-trillion-debt\">reduce federal revenue by $9.5 trillion</a> over the next decade and add $11.2 trillion to the debt, including interest costs. While his new plan has a higher top individual income tax rate than his first plan, it&#8217;s still a substantial tax cut. Some of the proposals, such as limiting the value of some itemized deductions, would increase revenue but would not raise nearly enough to offset the cost of his proposed cuts.<img class = \"alert-img\" src = \"images/charts/q4.png\"/>"
+        "text": "The Tax Policy Center estimated that Trump&#8217;s original tax proposal would<a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/trump-would-slash-taxes-top-01-percent-average-13-million-add-nearly-10-trillion-debt\">reduce federal revenue by $9.5 trillion</a> over the next decade and, absent significant cuts in government spending (which Trump has not proposed), would add $11.2 trillion to the debt, including interest costs. While his new plan would reduce tax rates less than his first plan, it would still cut taxes a lot. Some of the proposals, such as limiting the value of some itemized deductions, would increase revenue but would not raise nearly enough to offset the cost of his proposed cuts.<img class = \"alert-img\" src = \"images/charts/q4.png\"/>"
       },
       "image": "images/photos/img4.jpg",
       "number": 4,
@@ -70,7 +70,7 @@
       },
       "image": "images/photos/img5.jpg",
       "number": 5,
-      "prompt": "True or false: Trump&#8217;s proposed tax cuts are the larger than those passed by President Ronald Reagan and President George W. Bush?"
+      "prompt": "True or false: Trump&#8217;s proposed tax cuts are larger than those passed by President Ronald Reagan and President George W. Bush?"
     },
     {
       "answers": [
@@ -100,7 +100,7 @@
       },
       "image": "images/photos/img7.jpg",
       "number": 7,
-      "prompt": "Roughly how much of Clinton&#8217;s total tax increases are paid by the top 1 percent of households?"
+      "prompt": "Roughly how much of Clinton&#8217;s total tax increases would be paid by the top 1 percent of households?"
     },
     {
       "answers": [
@@ -109,7 +109,7 @@
       ],
       "correct": {
         "index": 0,
-        "text": "Clinton does not propose increasing any current tax rates. <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/clinton-and-sanders-take-two-different-paths-taxing-rich\">Instead</a>, she&#8217;d raise taxes with a new 4 percent &#8220;surcharge&#8221; on income over $5 million, create a new minimum tax (the &#8220;Buffett rule&#8221;) on people with income over $1 million, and limit the value of specified tax exemptions and deductions."
+        "text": "Clinton would leave current tax rates unchanged but <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/clinton-and-sanders-take-two-different-paths-taxing-rich\">she&#8217;d raise taxes</a> by imposing a new 4 percent &#8220;surcharge&#8221; on income over $5 million, creating a new minimum tax (the &#8220;Buffett rule&#8221;) on people with income over $1 million, and limiting the value of specified tax exemptions and deductions."
       },
       "image": "images/photos/img8.jpg",
       "number": 8,
@@ -124,11 +124,11 @@
       ],
       "correct": {
         "index": 3,
-        "text": "Clinton has <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/hillary-clinton-would-raise-taxes-high-income-households-11-trillion-over-10-years\">proposed new tax credits</a> for family caregivers and households with high out-of-pocket medical expenses, which would lower taxes for qualifying households. However, the Clinton campaign has promised that the candidate will propose tax cuts for low- and middle-income households later in the campaign."
+        "text": "Clinton has <a target=\"_blank\" href = \"http://www.taxpolicycenter.org/taxvox/hillary-clinton-would-raise-taxes-high-income-households-11-trillion-over-10-years\">proposed new tax credits</a> that would lower taxes for family caregivers and households with high out-of-pocket medical expenses. However, the Clinton campaign has promised that the candidate will propose tax cuts for low- and middle-income households later in the campaign."
       },
       "image": "images/photos/img9.jpg",
       "number": 9,
-      "prompt": "Who gets a tax cut under Clinton&#8217;s tax plan?"
+      "prompt": "Who would get a tax cut under Clinton&#8217;s tax plan?"
     },
     {
       "answers": [
@@ -138,7 +138,7 @@
       ],
       "correct": {
         "index": 0,
-        "text": "Clinton&#8217;s tax proposals would shave about $1.2 trillion off the nation&#8217;s debt over the next 10 years, only about 4 percent of GDP by the end of the period.<img class = \"alert-img\" src = \"images/charts/q10.png\"/>"
+        "text": "By themselves, Clinton&#8217;s tax proposals would shave about $1.2 trillion off the nation&#8217;s debt over the next 10 years, about 4 percent of GDP by the end of the period. But she has also proposed new spending programs that could use up some or all of the additional revenue.<img class = \"alert-img\" src = \"images/charts/q10.png\"/>"
       },
       "image": "images/photos/img10.jpg",
       "number": 10,
