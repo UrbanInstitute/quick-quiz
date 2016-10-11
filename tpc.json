@@ -67,7 +67,7 @@
       ],
       "correct": {
         "index": 0,
-        "text": "Clinton would leave current tax rates unchanged, but she\u2019d raise taxes by imposing a new 4 percent surcharge on income over $5 million, creating a new minimum tax (the &#8220;Buffett rule&#8221;) on people with income over $1 million, and limiting the value of specified tax exclusions and deductions.<img class = \"alert-img\" src = \"images/charts/q5.png\"/>"
+        "text": "Clinton would leave current tax rates unchanged, but she\u2019d raise taxes by imposing a new 4 percent surcharge on income over $5 million, creating a new minimum tax (the &#8220;Buffett rule&#8221;) on people with income over $1 million, and limiting the value of specified tax exclusions and deductions."
       },
       "image": "images/photos/img5.jpg",
       "number": 5,
@@ -96,7 +96,7 @@
       ],
       "correct": {
         "index": 3,
-        "text": "Under Clinton\u2019s proposals, the top 0.1 percent would see an average tax increase of roughly $800,000. The increase would mostly result from her proposed 4 percent surtax on incomes over $5 million and her proposed Buffett rule, which would impose a minimum tax on people with income over $1 million."
+        "text": "Under Clinton\u2019s proposals, the top 0.1 percent would see an average tax increase of roughly $800,000. The increase would mostly result from her proposed 4 percent surtax on incomes over $5 million and her proposed Buffett rule, which would impose a minimum tax on people with income over $1 million.<img class = \"alert-img\" src = \"images/charts/q5.png\"/>"
       },
       "image": "images/photos/img7.jpg",
       "number": 7,
@@ -118,5 +118,5 @@
     }
   ],
   "title": "Presidential Candidate Tax Quiz",
-  "url": "http://apps-staging.urban.org/features/quick-quiz/"
+  "url": "http://apps.urban.org/features/presidential-candidate-tax-quiz/"
 }
