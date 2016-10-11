@@ -287,6 +287,11 @@ var $dummy = $("<div>")
     .attr("class", "quiz-answers")
     .appendTo($results_slide);
 
+  var $links = $("<div>")
+    .attr('class', 'results-social')
+    .html('<div id = "links-text">Still have tax questions? Check out the Tax Policy Center’s full analyses of <a href = "http://www.taxpolicycenter.org/publications/analysis-donald-trumps-revised-tax-plan">Donald Trump’s</a> and <a href = "http://www.taxpolicycenter.org/publications/updated-analysis-hillary-clintons-tax-proposals">Hillary Clinton’s</a> tax plans at <a href = "http://www.taxpolicycenter.org/">taxpolicycenter.org</a>.</div>')
+    .appendTo($results_slide);
+
   var $social = $("<div>")
     .attr('class', 'results-social')
     .html('<div id = "social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!</div>')

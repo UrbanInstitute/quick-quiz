@@ -119,7 +119,7 @@ html, body {
 }
 
 .results-social a:not(:first-child) {
-  margin-left: 20px;
+  /*margin-left: 20px;*/
 }
 
 .progress-circles {
