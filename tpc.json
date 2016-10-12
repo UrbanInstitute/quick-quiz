@@ -40,7 +40,7 @@
       ],
       "correct": {
         "index": 3,
-        "text": "Trump\u2019s tax plan would, on average, cut taxes for households across the income spectrum, but the largest average increases in after-tax income\u2014in both dollar and percentage terms\u2014would go to the highest-income households. Filers in the top 0.1 percent would receive an average tax cut of over $1 million.<img class = \"alert-img\" src = \"images/charts/q3.png\"/>"
+        "text": "Trump\u2019s tax plan would, on average, cut taxes for households across the income spectrum, but the largest average increases in after-tax income\u2014in both dollar and percentage terms\u2014would go to the highest-income households. Filers in the top 0.1 percent would receive an average tax cut of over $1 million. In contrast, Trump would raise taxes on many single parents and large families by getting rid of dependent exemptions and the head-of-household filing status.<img class = \"alert-img\" src = \"images/charts/q3.png\"/>"
       },
       "image": "images/photos/img3.jpg",
       "number": 3,
@@ -85,7 +85,7 @@
       },
       "image": "images/photos/img6.jpg",
       "number": 6,
-      "prompt": "Clinton has proposed increasing the <span id = \"underline\"></span>, which mostly benefits low- and middle-income households."
+      "prompt": "Clinton has proposed increasing the <span id = \"underline\"></span>, which mostly benefits low- and middle-income families."
     },
     {
       "answers": [
@@ -118,5 +118,5 @@
     }
   ],
   "title": "Presidential Candidate Tax Quiz",
-  "url": "http://tpc.io/prezquiz"
+  "url": "http://apps.urban.org/features/presidential-candidate-tax-quiz/"
 }
