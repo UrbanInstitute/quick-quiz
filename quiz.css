@@ -76,6 +76,14 @@ html, body {
   margin-top: 20px;
 
 }
+.image-credit {
+  font-size: 12px;
+  color: #696969;
+  font-weight: 400;
+  text-align: right;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 .results-social{
  display: table;
 }
@@ -128,7 +136,7 @@ html, body {
 }
 
 .show{
- display:table !important; 
+ display:table !important;
 }
 
 .progress-circles li{
@@ -154,7 +162,7 @@ html, body {
   width: 32px;
 }
 .follow-tw:hover{
- background-position: 0 -1401px;   
+ background-position: 0 -1401px;
 }
 .follow-fb {
   display: inline-block;
@@ -165,7 +173,7 @@ html, body {
   width: 32px;
 }
 .follow-fb:hover{
- background-position: 0 -1433px;   
+ background-position: 0 -1433px;
 }
 
 

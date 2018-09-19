@@ -17,6 +17,8 @@ q_rx = re.compile(r"""
   (?P<answers>(?:\s+[-\*]\s.+)+)
   # image to include in response
   \s+(?P<image>\(image\).+)?
+  # credits to the image included in response
+  \s+(?P<image_credit>\(image_credit\).+)?
   # Extra text to include in response
   \s+(?P<text>(?![-\*]|^\d+\)|\s+\(image\)).+)?
 """, re.X | re.M)
@@ -68,6 +70,9 @@ def toJson(filename):
 
     if q['image']:
       out['image'] = q['image'].replace('(image)', "").strip()
+      
+    if q['image_credit']:
+      out['image_credit'] = q['image_credit'].replace('(image_credit)', "").strip()
 
     # correct answer info
     out['correct'] = {}
