@@ -16,8 +16,7 @@
     },
     {
       "answers": [
-        "True",
-        "False"
+        "True"
       ],
       "correct": {
         "index": 0
@@ -35,6 +34,7 @@
         "index": 1
       },
       "image": "unicorn.jpg",
+      "image_credit": "Random dude from the Interwebs",
       "number": 3,
       "prompt": "What shade of white is this unicorn?"
     }
