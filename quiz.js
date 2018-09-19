@@ -98,7 +98,7 @@ var $indicators = $('<ol>')
 
     })
     .appendTo($start_button);
-  
+
   $indicators
     .appendTo($quiz);
 
@@ -127,6 +127,10 @@ var $indicators = $('<ol>')
       $("<img>")
         .attr("class", "img-responsive")
         .attr("src", question.image)
+        .appendTo($img_div);
+      $('<p>')
+        .text(question.image_credit)
+        .attr("class", "image-credit")
         .appendTo($img_div);
     }
     $("<div>")
