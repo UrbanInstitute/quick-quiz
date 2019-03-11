@@ -37,5 +37,9 @@ url: http://urbaninstitute.github.io/quick-quiz/
   - Egg shell
 
   // this image will appear along with
-  // the question pompt
+  // the question prompt
   (image) unicorn.jpg
+
+  // this credit will appear along with
+  // image
+  (image_credit) Random dude from the Interwebs
