@@ -132,7 +132,7 @@ Finally, create a div to contain your quiz and include bootstrap and `quiz.js`
   </div>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="sweet-alert.min.js"></script>
+  <script src="sweet-alert.js"></script>
   <script src="quiz.js"></script>
   <script>
     $(function() {

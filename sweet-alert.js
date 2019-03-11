@@ -66,7 +66,6 @@ exports['default'] = sweetAlert = swal = function () {
   var customizations = arguments[0];
 
   _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide$isDescendant$getTopMargin$fadeIn$fadeOut$fireClick$stopEventPropagation.addClass(document.body, '');
-  console.log("foo")
   $('html,body').animate({ scrollTop: 0 }, 'slow');
   _sweetAlertInitialize$getModal$getOverlay$getInput$setFocusStyle$openModal$resetInput$fixVerticalPosition.resetInput();
 
