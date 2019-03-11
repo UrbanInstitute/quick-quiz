@@ -5,6 +5,73 @@
 
 ;(function($) {
 
+
+// Set language and texts
+var language = 'en';
+
+var texts = {};
+
+// ENGLISH
+texts.en = {
+    takeTheQuiz: "Take the quiz!",
+
+    correctTitle: "Nice!",
+    correctText: "Well done",
+    failTitle: "Drat",
+    failText: "Nope, not quite right!",
+    failTheCorrectAnswerWas: "The correct answer was",
+
+    nextQuestion: "Next Question",
+    seeYourResults: "See your results",
+
+    finalPerfect: "Wow&mdash;perfect score!",
+    finalAwesome: "Awesome job, you got most of them right.",
+    finalGood: "Pretty good, we'll say that's a pass.",
+    finalHalf: "Well, at least you got half of them right&hellip;",
+    finalTough: "Looks like this was a tough one, better luck next time.",
+    finalFail: "Yikes, none correct. Well, maybe it was rigged?",
+
+    finalNumberCorrectPart1: "You got",
+    finalNumberCorrectPart2: "% of the questions correct!",
+
+    tryAgain: "Try again?",
+    socialIntro: "Did you like the quiz? Share your results with your friends, so they can give it a shot!"
+};
+
+
+// GERMAN
+texts.de = {
+    takeTheQuiz: "Quiz beginnen!",
+
+    correctTitle: "Klasse!",
+    correctText: "Gut gemacht",
+    failTitle: "Mist!",
+    failText: "Leider nein, knapp daneben.",
+    failTheCorrectAnswerWas: "Die richtige Antwort ist",
+
+    nextQuestion: "Nächste Frage",
+    seeYourResults: "Resultat ansehen",
+
+    finalPerfect: "Wow&mdash;eine perfekte Leistung!",
+    finalAwesome: "Fantastisch, du hast die meisten Fragen richtig beantwortet.",
+    finalGood: "Sehr gut, du hast bestanden!",
+    finalHalf: "Naja, immerhin hast du die Hälfte der Fragen richtig&hellip;",
+    finalTough: "Ein schweres Quiz, nicht wahr? Wir wünschen dir mehr Glück beim nächsten Mal.",
+    finalFail: "Du liebes Bisschen. Alles falsch!",
+
+    finalNumberCorrectPart1: "Du hast",
+    finalNumberCorrectPart2: "% der Fragen richtig beantwortet!",
+
+    tryAgain: "Nochmals versuchen?",
+    socialIntro: "Hat dir unser Quiz gefallen? Dann teile dein Resultat mit deinen Freunden, so dass sie es auch mal versuchen können."
+};
+
+if (texts[language] !== undefined) {
+    texts = texts[language];
+} else {
+    texts = texts.en;
+}
+
 // keep track of number of quizes added to page
 var quiz_count = 0;
 
@@ -82,7 +149,7 @@ var $indicators = $('<ol>')
 
   $("<button>")
     .attr('class', 'quiz-button btn')
-    .text("Take the quiz!")
+    .text(texts.takeTheQuiz)
     .click(function() {
       $quiz.carousel('next');
       $indicators.addClass('show');
@@ -165,7 +232,7 @@ var $indicators = $('<ol>')
       var opts = {
         allowOutsideClick : false,
         allowEscapeKey : false,
-        confirmButtonText: "Next Question",
+        confirmButtonText: texts.nextQuestion,
         html : true,
         confirmButtonColor: "#0096D2"
       };
@@ -174,8 +241,8 @@ var $indicators = $('<ol>')
       // answer dialogue
       if (correct) {
         opts = $.extend(opts, {
-          title: "Nice!",
-          text: "Well done" + (
+          title: texts.correctTitle,
+          text: texts.correctText + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
               question.correct.text +
@@ -185,10 +252,10 @@ var $indicators = $('<ol>')
         });
       } else {
         opts = $.extend(opts, {
-          title: "Drat",
+          title: texts.failTitle,
           text: (
-            "Nope, not quite right!<br/><br/>" +
-            "The correct answer was \"" +
+            texts.failText + "<br/><br/>" +
+            texts.failTheCorrectAnswerWas + " \"" +
             question.answers[question.correct.index] + "\"." + (
             question.correct.text ?
             ("<div class=\"correct-text\">" +
@@ -201,7 +268,7 @@ var $indicators = $('<ol>')
       }
 
       if (last_question) {
-        opts.confirmButtonText = "See your results";
+        opts.confirmButtonText = texts.seeYourResults;
       }
 
       // bind click event to answer button,
@@ -219,9 +286,9 @@ var $indicators = $('<ol>')
           if (last_question) {
             $results_title.html(resultsText(state));
             $results_ratio.text(
-              "You got " +
+              texts.finalNumberCorrectPart1 + " " +
               Math.round(100*(state.correct/state.total)) +
-              "% of the questions correct!"
+              texts.finalNumberCorrectPart2
             );
             $twitter_link.attr('href', tweet(state, quiz_opts));
             $facebook_link.attr('href', facebook(state, quiz_opts));
@@ -274,8 +341,8 @@ var $indicators = $('<ol>')
     .appendTo($results_slide);
 
   var $social = $("<div>")
-    .attr('class', 'results-social')
-    .html('<div id = "social-text">Did you like the quiz? Share your results with your friends, so they can give it a shot!</div>')
+    .attr('class', 'results-sociDid youal')
+    .html('<div id = "social-text">' + texts.socialIntro + '</div>')
     .appendTo($results_slide);
 
   var $twitter_link = $('<a>')
@@ -288,7 +355,7 @@ var $indicators = $('<ol>')
 
   $("<button>")
     .attr('class', 'quiz-button btn')
-    .text("Try again?")
+    .text(texts.tryAgain)
     .click(function() {
       state.correct = 0;
       $quiz.carousel(0);
@@ -313,22 +380,22 @@ function resultsText(state) {
 
   switch (true) {
     case (ratio === 1):
-      text = "Wow&mdash;perfect score!";
+      text = texts.finalPerfect;
       break;
     case (ratio > 0.9):
-      text = "Awesome job, you got most of them right.";
+      text = texts.finalAwesome;
       break;
     case (ratio > 0.60):
-      text = "Pretty good, we'll say that's a pass.";
+      text = texts.finalGood;
       break;
     case (ratio > 0.5):
-      text = "Well, at least you got half of them right&hellip;";
+      text = texts.finalHalf;
       break;
     case (ratio < 0.5 && ratio !== 0):
-      text = "Looks like this was a tough one, better luck next time.";
+      text = texts.finalTough;
       break;
     case (ratio === 0):
-      text = "Yikes, none correct. Well, maybe it was rigged?";
+      text = texts.finalFail;
       break;
   }
   return text;
