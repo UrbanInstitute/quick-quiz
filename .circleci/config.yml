@@ -3,6 +3,8 @@ orbs:
   aws-s3: circleci/aws-s3@1.0.15
 jobs:
   deploy-stg:
+    docker:
+      - image: 'cimg/python:3.6'
     steps:
       - checkout
       # - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
