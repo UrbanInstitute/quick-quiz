@@ -7,14 +7,29 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
-      # - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
+      - run:
+          name: Cleanup for deploy
+          command: |
+            rm -rf .git
       - aws-s3/sync:
-          # arguments: |
-          #   --acl public-read \
-          #   --cache-control "max-age=86400"
           from: .
           overwrite: true
           to: 's3://apps-stg.taxpolicycenter.org/features/presidential-candidate-tax-quiz'
+
+  deploy-live:
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - checkout
+      - run:
+          name: Cleanup for deploy
+          command: |
+            rm -rf .git
+      - aws-s3/sync:
+          from: .
+          overwrite: true
+          to: 's3://apps.taxpolicycenter.org/features/presidential-candidate-tax-quiz'
+
 workflows:
   version: 2
   aws-s3:
@@ -23,10 +38,10 @@ workflows:
           filters:
             branches:
               only:
-                - WDT-3400/ci-cd-apps-features
+                - staging
   
-      # - deploy-live:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
+      - deploy-live:
+          filters:
+            branches:
+              only:
+                - master
