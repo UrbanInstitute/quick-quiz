@@ -15,7 +15,7 @@ jobs:
           to: 's3://apps-stg.taxpolicycenter.org/features/presidential-candidate-tax-quiz'
 workflows:
   version: 2
-  deploy:
+  aws-s3:
     jobs:
       - deploy-stg:
           filters:
