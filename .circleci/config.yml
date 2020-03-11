@@ -1,0 +1,30 @@
+version: 2.1
+orbs:
+  aws-s3: circleci/aws-s3@1.0.15
+jobs:
+  deploy-stg:
+    steps:
+      - checkout
+      # - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
+      - aws-s3/sync:
+          # arguments: |
+          #   --acl public-read \
+          #   --cache-control "max-age=86400"
+          from: .
+          overwrite: true
+          to: 's3://apps-stg.taxpolicycenter.org/features/presidential-candidate-tax-quiz'
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy-stg:
+          filters:
+            branches:
+              only:
+                - WDT-3400/ci-cd-apps-features
+  
+      # - deploy-live:
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
