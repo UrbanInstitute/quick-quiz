@@ -156,7 +156,7 @@ html, body {
 .follow-tw {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(icons-s973202652e.png);
+  background-image: url(external/icons-s973202652e.png);
   background-position: 0 -993px;
   height: 32px;
   width: 32px;
@@ -167,7 +167,7 @@ html, body {
 .follow-fb {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(icons-s973202652e.png);
+  background-image: url(external/icons-s973202652e.png);
   background-position: 0 -1880px;
   height: 32px;
   width: 32px;
