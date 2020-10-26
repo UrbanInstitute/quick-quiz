@@ -1,6 +1,7 @@
 html, body {
   width: 100%;
   font-family: Lato;
+  background-color: #3498db;
 }
 
 .quiz-question {
@@ -12,6 +13,7 @@ html, body {
   margin-top: 30px;
   font-size: 32px;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .quiz-answers {
@@ -33,17 +35,18 @@ html, body {
 }
 .quiz-button.btn {
   margin-top: 10px;
-  background-color: #ddd;
+  background-color: #3498db;
   border-radius: 0;
   text-transform: uppercase;
   white-space: normal !important;
   max-width: 250px;
   width: 250px;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
 .quiz-button.btn:hover {
-  background-color: #0096D2;
-  color: #fff;
+  background-color: rgba(255, 255, 255, 0.075);
 }
 
 
@@ -64,6 +67,7 @@ html, body {
   margin: 0 auto;
   text-align: center;
   padding-top: 20px !important;
+  color: #fff;
 }
 
 .results-ratio,
@@ -95,7 +99,7 @@ html, body {
 
 .quiz-title {
   font-size: 60px;
-  font-weight: 300;
+  font-weight: 700;
   margin-top: 100px;
   margin-bottom: 30px;
 }
@@ -149,14 +153,14 @@ html, body {
   margin-right: 10px;
 }
 .progress-circles li.dark{
-  background: #1696d2;
+  background: #fff;
 }
 
 
 .follow-tw {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(images/icons-s973202652e.png);
+  background-image: url(../../images/icons-s973202652e.png);
   background-position: 0 -993px;
   height: 32px;
   width: 32px;
@@ -167,7 +171,7 @@ html, body {
 .follow-fb {
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url(images/icons-s973202652e.png);
+  background-image: url(../../images/icons-s973202652e.png);
   background-position: 0 -1880px;
   height: 32px;
   width: 32px;
