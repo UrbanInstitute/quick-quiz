@@ -117,7 +117,7 @@ Finally, create a div to contain your quiz and include bootstrap and `quiz.js`
   <title>Quiz Example</title>
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="external/sweet-alert.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/sweet-alert.css">
   <link rel="stylesheet" href="quiz.css">
   <style>
     #quiz {
@@ -132,7 +132,7 @@ Finally, create a div to contain your quiz and include bootstrap and `quiz.js`
   </div>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="external/sweet-alert.js"></script>
+  <script src="assets/js/sweet-alert.js"></script>
   <script src="quiz.js"></script>
   <script>
     $(function() {
