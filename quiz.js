@@ -20,6 +20,26 @@ $.fn.quiz = function(filename) {
   }
 };
 
+ //Question shuffler
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
 // create html structure for quiz
 // using loaded questions json
 function render(quiz_opts) {
@@ -27,6 +47,8 @@ function render(quiz_opts) {
 
   // list of questions to insert into quiz
   var questions = quiz_opts.questions;
+  //randomizes questions
+  shuffle(questions);
 
   // keep track of the state of correct
   // answers to the quiz so far
